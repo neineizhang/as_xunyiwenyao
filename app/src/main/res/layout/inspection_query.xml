@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:background="@drawable/background_login">
+
+   		<com.zll.xunyiwenyao.util.TopBarView  
+        android:id="@+id/topbar"  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        custom:titleText="检查单查询"   
+        custom:titleSize="6sp"   
+        custom:titleColor="@android:color/white"   
+        custom:leftBtn="@drawable/back_page"   
+        custom:rightBtn="@drawable/edit_normal" />
+
+    </LinearLayout>
+
+</LinearLayout>

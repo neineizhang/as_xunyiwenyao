@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<TextView android:id="@+id/drugs_list_item1" android:text="序号"
+        android:textSize="16.0sp" android:gravity="center"
+        android:layout_width="100.0dip" android:layout_height="wrap_content"></TextView>
+<LinearLayout android:orientation="horizontal" 
+    android:id="@+id/head"
+        android:layout_width="900.0dip" 
+        android:layout_height="wrap_content">
+<TextView android:id="@+id/drugs_list_item2" android:text="药品名称"
+            android:textColor="@android:color/black" android:textSize="16.0sp"
+            android:singleLine="true" android:gravity="center"
+            android:layout_width="150.0dip" android:layout_height="wrap_content"></TextView>
+<TextView android:id="@+id/drugs_list_item3" android:text="药品规格"
+            android:textSize="16.0sp" android:singleLine="true" android:gravity="center"
+            android:layout_width="150.0dip" android:layout_height="wrap_content"></TextView>
+<TextView android:id="@+id/drugs_list_item4" android:text="药品数量"
+            android:textColor="@android:color/black" android:textSize="16.0sp"
+            android:singleLine="true" android:gravity="center"
+            android:layout_width="150.0dip" android:layout_height="wrap_content"></TextView>
+<TextView android:id="@+id/drugs_list_item5" android:text="药品价格"
+            android:textSize="16.0sp" android:singleLine="true" android:gravity="center"
+            android:layout_width="150.0dip" android:layout_height="wrap_content"></TextView>
+<TextView android:id="@+id/drugs_list_item6" android:text="备注"
+            android:textColor="@android:color/black" android:textSize="16.0sp"
+            android:singleLine="true" android:gravity="center"
+            android:layout_width="150.0dip" android:layout_height="wrap_content"></TextView>
+
+
+</LinearLayout>
+</LinearLayout>

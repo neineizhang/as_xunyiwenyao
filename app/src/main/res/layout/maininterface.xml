@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:divider="@drawable/line_div"  
+    android:showDividers="middle"
+    android:dividerPadding="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical" >
+
+       
+        <ImageView
+            android:id="@+id/maininterface_signmark"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/signmark" />
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/prescription_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="处方中心"
+        android:layout_weight="0.1" />
+    
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+    
+    
+        <Button
+            android:id="@+id/prescription_create"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="处方开具" />
+
+        <Button
+            android:id="@+id/prescription_template"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="处方模板" />
+
+        <Button
+            android:id="@+id/prescription_query"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="处方查询" />
+
+        <Button
+            android:id="@+id/prescription_examine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="处方审核" />
+        
+    </LinearLayout>
+
+   <TextView
+       android:id="@+id/inspection_tv"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="检查单中心"
+       android:layout_weight="0.1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/inspection_create"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="检查单开具" />
+
+        <Button
+            android:id="@+id/inspection_template"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="检查单模板" />
+
+        <Button
+            android:id="@+id/inspection_query"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="检查单查询" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/other_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="药物反应报告" 
+        android:layout_weight="0.1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/review"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="用户药品评价浏览" />
+
+        <Button
+            android:id="@+id/report"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="药物反应报告填写" />
+    </LinearLayout>
+
+</LinearLayout>

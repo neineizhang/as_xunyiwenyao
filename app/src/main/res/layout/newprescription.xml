@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="处方单名称:" 
+            android:layout_weight="1"/>
+        
+        <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+        
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            
+
+        />
+
+    </LinearLayout>
+   
+    <!--添加横线  -->
+    <View  android:layout_height="1px" 
+           android:layout_width="match_parent"
+           android:background="#BFBFBF"
+
+    />
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="病人信息"
+            android:textColor="#000000"
+        	android:textStyle="bold"
+        	android:background="#B0B0B0"
+        	android:textSize="18sp"
+            android:layout_weight="2" 
+           />
+        
+        <View  android:layout_height="1px" 
+           android:layout_width="match_parent"
+           android:background="#BFBFBF"
+
+    />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/name_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="姓名" 
+                android:layout_weight="1"/>
+                <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+        
+  
+       
+        <View  android:layout_height="1px" 
+           android:layout_width="match_parent"
+           android:background="#BFBFBF"
+
+    />
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/sexy_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="性别" 
+                android:layout_weight="1"/>
+                <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/sexy_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+        
+  
+       
+        <View  android:layout_height="1px" 
+           android:layout_width="match_parent"
+           android:background="#BFBFBF"
+
+    />
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/age_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="年龄" 
+                android:layout_weight="1"/>
+                <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/age_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+        
+  
+       
+        <View  android:layout_height="1px" 
+           android:layout_width="match_parent"
+           android:background="#BFBFBF"
+
+    />
+
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/clinical_diagnosis_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="临床诊断" 
+                android:layout_weight="1"/>
+                <View  
+    	       android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/clinical_diagnosis_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+        
+  
+       
+        <View  android:layout_height="1px" 
+           android:layout_width="match_parent"
+           android:background="#BFBFBF"
+
+    />
+
+    </LinearLayout>
+    
+   
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/pricription_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:background="#B0B0B0"
+            android:text="处方信息"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" 
+            
+            />
+        
+         <Button
+             android:id="@+id/add_drug"
+             style="?android:attr/buttonStyleSmall"
+             android:layout_width="wrap_content"
+             android:layout_height="fill_parent"
+             android:layout_alignBottom="@+id/pricription_information"
+             android:layout_alignParentRight="true"
+             android:layout_alignParentTop="true"
+             android:text="＋" />
+            
+</RelativeLayout>
+
+     <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical" >
+
+    
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dip"
+        
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:textColor="#850"
+            android:gravity="center"
+            android:text="药品序号" />
+
+         <com.zll.xunyiwenyao.util.CHScrollView
+            android:id="@+id/item_scroll_title"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal" >
+                <TextView
+                    android:text="药品名称"
+                    android:layout_width="100dip"
+                    android:layout_height="fill_parent"
+                    android:textColor="#850"
+                    android:gravity="center" />
+
+                <TextView
+                    android:text="药品规格"
+                    android:layout_width="100dip"
+                    android:layout_height="fill_parent"
+                    android:textColor="#850"
+                    android:gravity="center" />
+
+                <TextView
+                    android:text="药品数量"
+                    android:layout_width="100dip"
+                    android:textColor="#850"
+                    android:layout_height="fill_parent"
+                    android:gravity="center" />
+
+                <TextView
+                    android:text="药品单价"
+                    android:layout_width="100dip"
+                    android:textColor="#850"
+                    android:layout_height="fill_parent"
+                    android:gravity="center" />
+
+                <TextView
+                    android:text="服用备注"
+                    android:layout_width="100dip"
+                    android:textColor="#850"
+                    android:layout_height="fill_parent"
+                    android:gravity="center" />
+
+                
+            </LinearLayout>
+            
+        </com.zll.xunyiwenyao.util.CHScrollView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/drugs_lv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollbars="none" >
+    </ListView>
+         
+
+   
+     </LinearLayout>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+      <TextView
+            android:id="@+id/textView3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="其他信息"
+            android:textColor="#000000"
+        	android:textStyle="bold"
+        	android:background="#B0B0B0"
+        	android:textSize="18sp"
+           
+   />
+        
+      <View  android:layout_height="1px" 
+           android:layout_width="match_parent"
+           android:background="#BFBFBF"
+
+    />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/name_view31"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="处方生成日期" 
+                android:layout_weight="1"/>
+                <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/name_text31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+           <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/name_view32"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="执业医师" 
+                android:layout_weight="1"/>
+                <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/name_text32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+           <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/name_view33"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="审核医师" 
+                android:layout_weight="1"/>
+                <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/name_text33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+           <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/name_view34"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="其他" 
+                android:layout_weight="1"/>
+                <View  
+    	android:layout_width="1px" 
+    	android:layout_height="match_parent"
+    	android:background="#BFBFBF"
+    	android:layout_gravity="center_horizontal"
+    />
+
+            <EditText
+                android:id="@+id/name_text34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                 />
+
+        </LinearLayout>
+        
+</LinearLayout>
+
+
+     
+     </LinearLayout>
+    </ScrollView>
