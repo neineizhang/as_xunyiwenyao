@@ -5,7 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.zll.xunyiwenyao.dbitem.Drug;
 import com.zll.xunyiwenyao.util.CHScrollView;
+import com.zll.xunyiwenyao.webservice.DrugWebService;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -36,7 +38,8 @@ public class New_prescription extends Activity {
 	private MyExpandableListViewAdapter2 adapter;
     private AutoCompleteTextView add_drugs_autv;
 	private Map<String, List<String>> dataset = new HashMap<>();
-	private String[] parentList = new String[] { "first", "second", "third" };
+	//private String[] parentList = new String[] { "first", "second", "third" };
+    private String[] parentList = new String[] { "first" };
 	private List<String> childrenList1 = new ArrayList<>();
 	private List<String> childrenList2 = new ArrayList<>();
 	private List<String> childrenList3 = new ArrayList<>();
@@ -131,18 +134,26 @@ public class New_prescription extends Activity {
 	}
 
 	private void initialData() {
-		childrenList1.add(parentList[0] + "-" + "first");
-		childrenList1.add(parentList[0] + "-" + "second");
-		childrenList1.add(parentList[0] + "-" + "third");
-		childrenList2.add(parentList[1] + "-" + "first");
-		childrenList2.add(parentList[1] + "-" + "second");
-		childrenList2.add(parentList[1] + "-" + "third");
-		childrenList3.add(parentList[2] + "-" + "first");
-		childrenList3.add(parentList[2] + "-" + "second");
-		childrenList3.add(parentList[2] + "-" + "third");
-		dataset.put(parentList[0], childrenList1);
-		dataset.put(parentList[1], childrenList2);
-		dataset.put(parentList[2], childrenList3);
+//		childrenList1.add(parentList[0] + "-" + "first");
+//		childrenList1.add(parentList[0] + "-" + "second");
+//		childrenList1.add(parentList[0] + "-" + "third");
+//		childrenList2.add(parentList[1] + "-" + "first");
+//		childrenList2.add(parentList[1] + "-" + "second");
+//		childrenList2.add(parentList[1] + "-" + "third");
+//		childrenList3.add(parentList[2] + "-" + "first");
+//		childrenList3.add(parentList[2] + "-" + "second");
+//		childrenList3.add(parentList[2] + "-" + "third");
+//		dataset.put(parentList[0], childrenList1);
+//		dataset.put(parentList[1], childrenList2);
+//		dataset.put(parentList[2], childrenList3);
+
+        List<String> namelt = new ArrayList<String>();
+		List<Drug> resultDruglt = DrugWebService.getAllDrug();
+		//System.out.println(resultDruglt.size());
+        for(Drug item : resultDruglt){
+            namelt.add(item.getName());
+        }
+		dataset.put("first", namelt);
 	}
     
 
@@ -233,7 +244,7 @@ public class New_prescription extends Activity {
 			} else {
 				groupHolder = (ViewHolderGroup) convertView.getTag();
 			}
-			groupHolder.tv_group_name.setText("11111111111111");
+			groupHolder.tv_group_name.setText(parentList[0]);
 			return convertView;
 		}
 
