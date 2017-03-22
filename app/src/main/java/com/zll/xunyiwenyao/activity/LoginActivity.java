@@ -1,21 +1,10 @@
-package com.zll.xunyiwenyao;
-
-import java.math.BigInteger;
-import java.security.MessageDigest;
-
-
-//import com.zll.xunyiwenyao.db.MyDBHelper;
+package com.zll.xunyiwenyao.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,7 +12,14 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class login extends Activity {
+import com.zll.xunyiwenyao.R;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+
+//import com.zll.xunyiwenyao.db.MyDBHelper;
+
+public class LoginActivity extends Activity {
 
 	private RadioGroup select_doctor;
 	private Button login_entrylog;
@@ -31,13 +27,13 @@ public class login extends Activity {
 	private Button btn_register;
 	//private MyDBHelper myDBHelper;
 	private SQLiteDatabase db;
-    
-    
+
+
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
-		
+
 		//myDBHelper = new MyDBHelper(login.this,"xywy_db",null, 1);
 //		db = myDBHelper.getReadableDatabase();
 
@@ -55,7 +51,7 @@ public class login extends Activity {
 //			}
 //		});
 
-		login_entrylog.setOnClickListener(new View.OnClickListener() {
+		login_entrylog.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -65,23 +61,23 @@ public class login extends Activity {
 				String pwd = login_pwd.getText().toString();
 				
 				if (TextUtils.isEmpty(name) || TextUtils.isEmpty(pwd)) {
-					Toast.makeText(login.this, "鐢ㄦ埛鍚嶆垨瀵嗙爜涓嶈兘涓虹┖", Toast.LENGTH_SHORT).show();
+					Toast.makeText(LoginActivity.this, "鐢ㄦ埛鍚嶆垨瀵嗙爜涓嶈兘涓虹┖", Toast.LENGTH_SHORT).show();
 				} else {
 					switch (doctor_id) {
 					case R.id.login_doctor_select1: {
 						if (name.equals("root") && pwd.equals("2222")) {
 							
-							Intent i=new Intent(login.this,maininterface.class);
+							Intent i=new Intent(LoginActivity.this,MainActivity.class);
 							startActivity(i);
 							login_name.setText(null);
 							login_pwd.setText(null);
 							
 						} else if (!name.equals("root")) {
-							Toast.makeText(login.this, "涓嶅瓨鍦ㄨ鐢ㄦ埛", Toast.LENGTH_SHORT).show();
+							Toast.makeText(LoginActivity.this, "涓嶅瓨鍦ㄨ鐢ㄦ埛", Toast.LENGTH_SHORT).show();
 							login_name.setText(null);
 							login_pwd.setText(null);
 						} else {
-							Toast.makeText(login.this, "瀵嗙爜閿欒", Toast.LENGTH_SHORT).show();
+							Toast.makeText(LoginActivity.this, "瀵嗙爜閿欒", Toast.LENGTH_SHORT).show();
 						
 							login_pwd.setText(null);
 						}
@@ -90,18 +86,18 @@ public class login extends Activity {
 					case R.id.login_doctor_select2: {
 						if (name.equals("admin") && pwd.equals("1234")) {
 							
-							Intent i=new Intent(login.this,maininterface.class);
+							Intent i=new Intent(LoginActivity.this,MainActivity.class);
 							startActivity(i);
 							login_name.setText(null);
 							login_pwd.setText(null);
 							
 							
 						} else if (!name.equals("root")) {
-							Toast.makeText(login.this, "涓嶅瓨鍦ㄨ鐢ㄦ埛", Toast.LENGTH_SHORT).show();
+							Toast.makeText(LoginActivity.this, "涓嶅瓨鍦ㄨ鐢ㄦ埛", Toast.LENGTH_SHORT).show();
 							login_name.setText(null);
 							login_pwd.setText(null);
 						} else {
-							Toast.makeText(login.this, "瀵嗙爜閿欒", Toast.LENGTH_SHORT).show();
+							Toast.makeText(LoginActivity.this, "瀵嗙爜閿欒", Toast.LENGTH_SHORT).show();
 					
 							login_pwd.setText(null);
 						}
@@ -109,7 +105,7 @@ public class login extends Activity {
 					}
 
 					default:
-						Toast.makeText(login.this, "璇烽�夋嫨鍖荤敓绫诲埆", Toast.LENGTH_SHORT).show();
+						Toast.makeText(LoginActivity.this, "璇烽�夋嫨鍖荤敓绫诲埆", Toast.LENGTH_SHORT).show();
 						break;
 					}
 				}

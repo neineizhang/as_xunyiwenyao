@@ -15,6 +15,9 @@ public class Utils {
     };
 
     public static enum DEPARTMENT {
-        MAN, WOMAN
+        NEIKE, WAIKE, ERKE, FUCHANKE, WUGUANKE, PIFUKE
     };
+
+    public static String[] DEPARTMENT_ARRAY = new String[]{"NEI KE", "WAI KE", "ER KE", "FU CHAN KE", "WU GUANKE", "PI FU KE"};
+
 }

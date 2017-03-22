@@ -1,16 +1,9 @@
-package com.zll.xunyiwenyao;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+package com.zll.xunyiwenyao.activity;
 
 import android.app.Activity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +15,15 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zll.xunyiwenyao.R;
 
-public class Prescription_template extends Activity {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+
+public class PrescriptionTemplateActivity extends Activity {
 	
 	
 	private  ExpandableListView template_exist_lol;
@@ -55,13 +55,13 @@ public class Prescription_template extends Activity {
             public boolean onChildClick(ExpandableListView expandableListView, View view,
                                         int parentPos, int childPos, long l) {
             	prescription_template_search_text.setText(dataset.get(parentList[parentPos]).get(childPos));
-                Toast.makeText(Prescription_template.this,
+                Toast.makeText(PrescriptionTemplateActivity.this,
                         dataset.get(parentList[parentPos]).get(childPos), Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
 		
-		ArrayAdapter<String> autvadapter = new ArrayAdapter<String>(Prescription_template.
+		ArrayAdapter<String> autvadapter = new ArrayAdapter<String>(PrescriptionTemplateActivity.
                 this, android.R.layout.simple_dropdown_item_1line, data);
 		prescription_template_search_text.setAdapter(autvadapter);
 		
@@ -70,7 +70,7 @@ public class Prescription_template extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i = new Intent(Prescription_template.this,TemplateMange.class);
+				Intent i = new Intent(PrescriptionTemplateActivity.this,PrescriptionTemplateMangeActivity.class);
 				startActivity(i);
 			}
 		});
@@ -144,7 +144,7 @@ public class Prescription_template extends Activity {
 	        @Override
 	        public View getGroupView(int parentPos, boolean b, View view, ViewGroup viewGroup) {
 	            if (view == null) {
-	                LayoutInflater inflater = (LayoutInflater)Prescription_template
+	                LayoutInflater inflater = (LayoutInflater)PrescriptionTemplateActivity
 	                        .this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	                view = inflater.inflate(R.layout.prescription_template_lvgroup, null);
 	            }
@@ -159,7 +159,7 @@ public class Prescription_template extends Activity {
 	        @Override
 	        public View getChildView(int parentPos, int childPos, boolean b, View view, ViewGroup viewGroup) {
 	            if (view == null) {
-	                LayoutInflater inflater = (LayoutInflater) Prescription_template
+	                LayoutInflater inflater = (LayoutInflater) PrescriptionTemplateActivity
 	                        .this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	                view = inflater.inflate(R.layout.itemoftemplate, null);
 	            }

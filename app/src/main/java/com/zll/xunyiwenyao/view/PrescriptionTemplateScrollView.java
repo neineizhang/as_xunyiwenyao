@@ -1,28 +1,28 @@
-package com.zll.xunyiwenyao.util;
-
-import com.zll.xunyiwenyao.TemplateMange;
+package com.zll.xunyiwenyao.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.HorizontalScrollView;
 
-public class CHScrollView2 extends HorizontalScrollView {
-	
-	TemplateMange activity;
+import com.zll.xunyiwenyao.activity.PrescriptionTemplateMangeActivity;
 
-	public CHScrollView2(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle); 
-		activity = (TemplateMange) context;
+public class PrescriptionTemplateScrollView extends HorizontalScrollView {
+
+	PrescriptionTemplateMangeActivity activity;
+
+	public PrescriptionTemplateScrollView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		activity = (PrescriptionTemplateMangeActivity) context;
 	}
-	public CHScrollView2(Context context, AttributeSet attrs) { 
-		super(context, attrs); 
-		activity = (TemplateMange) context;
+	public PrescriptionTemplateScrollView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		activity = (PrescriptionTemplateMangeActivity) context;
 	}
-	
-	public CHScrollView2(Context context) { 
+
+	public PrescriptionTemplateScrollView(Context context) {
 		super(context); 
-		activity = (TemplateMange) context;
+		activity = (PrescriptionTemplateMangeActivity) context;
 	}
 	
 	@Override  

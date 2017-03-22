@@ -1,14 +1,20 @@
-package com.zll.xunyiwenyao;
+package com.zll.xunyiwenyao.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnCreateContextMenuListener;
 import android.widget.Button;
 
-public class maininterface extends Activity{
+import com.zll.xunyiwenyao.Inspection_create;
+import com.zll.xunyiwenyao.Inspection_query;
+import com.zll.xunyiwenyao.Inspection_template;
+import com.zll.xunyiwenyao.R;
+import com.zll.xunyiwenyao.Report;
+import com.zll.xunyiwenyao.Review;
+
+public class MainActivity extends Activity{
 	
 	private Button prescription_create,prescription_query,prescription_template,prescription_examine;
 	private Button inspection_create,inspection_template,inspection_query,review,report;
@@ -34,7 +40,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i1=new Intent(maininterface.this,Precription_create.class);
+				Intent i1=new Intent(MainActivity.this,PrescriptionCreateActivity.class);
 				startActivity(i1);
 				
 			}
@@ -44,7 +50,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i2=new Intent(maininterface.this,Prescription_template.class);
+				Intent i2=new Intent(MainActivity.this,PrescriptionTemplateActivity.class);
 				startActivity(i2);
 				
 			}
@@ -55,7 +61,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i3=new Intent(maininterface.this,Prescription_query.class);
+				Intent i3=new Intent(MainActivity.this,PrescriptionQueryActivity.class);
 				startActivity(i3);
 				
 			}
@@ -66,7 +72,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i4=new Intent(maininterface.this,Prescription_examine.class);
+				Intent i4=new Intent(MainActivity.this,PrescriptionExamineActivity.class);
 				startActivity(i4);
 				
 			}
@@ -77,7 +83,7 @@ public class maininterface extends Activity{
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Intent i5=new Intent(maininterface.this, Inspection_create.class);
+			Intent i5=new Intent(MainActivity.this, Inspection_create.class);
 			startActivity(i5);
 		}
     	   
@@ -88,7 +94,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i7=new Intent(maininterface.this,Inspection_template.class);
+				Intent i7=new Intent(MainActivity.this,Inspection_template.class);
 				startActivity(i7);
 				
 			}
@@ -99,7 +105,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i8=new Intent(maininterface.this,Inspection_query.class);
+				Intent i8=new Intent(MainActivity.this,Inspection_query.class);
 				startActivity(i8);
 				
 			}
@@ -110,7 +116,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i9=new Intent(maininterface.this,Review.class);
+				Intent i9=new Intent(MainActivity.this,Review.class);
 				startActivity(i9);
 				
 			}
@@ -121,7 +127,7 @@ public class maininterface extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i10=new Intent(maininterface.this,Report.class);
+				Intent i10=new Intent(MainActivity.this,Report.class);
 				startActivity(i10);
 				
 			}

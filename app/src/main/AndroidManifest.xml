@@ -14,25 +14,20 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
-            
-        </activity>
-        <activity
-            android:name="login">
+            android:name="com.zll.xunyiwenyao.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="maininterface"></activity>
-        <activity android:name="Precription_create"></activity>
-        <activity android:name="Prescription_examine"></activity>
-        <activity android:name="Prescription_template"></activity>
-        <activity android:name="Prescription_query"></activity>
-        <activity android:name="New_prescription"></activity>
-        <activity android:name="TemplateMange"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.MainActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionCreateActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionCreateMainActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionExamineActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionTemplateActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionTemplateMangeActivity"></activity>
         <activity android:name="Inspection_create"></activity>
         <activity android:name="Inspection_template"></activity>
         <activity android:name="Inspection_query"></activity>

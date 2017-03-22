@@ -1,28 +1,30 @@
-package com.zll.xunyiwenyao;
+package com.zll.xunyiwenyao.activity;
 
 import android.app.Activity;
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import com.zll.xunyiwenyao.util.CHScrollView2;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
 import android.widget.HorizontalScrollView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TemplateMange extends Activity {
+import com.zll.xunyiwenyao.R;
+import com.zll.xunyiwenyao.view.PrescriptionTemplateScrollView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class PrescriptionTemplateMangeActivity extends Activity {
 	
 	private ListView template_drugs_lv;
 	public HorizontalScrollView templateTouchView;
-	protected List<CHScrollView2> templateHScrollViews =new ArrayList<CHScrollView2>();
+	protected List<PrescriptionTemplateScrollView> templateHScrollViews =new ArrayList<PrescriptionTemplateScrollView>();
  
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -34,7 +36,7 @@ public class TemplateMange extends Activity {
 	private void initViews() {
 		List<Map<String, String>> datas = new ArrayList<Map<String,String>>();
 		Map<String, String> data = null;
-		CHScrollView2 headerScroll = (CHScrollView2) findViewById(R.id.template_item_scroll_title);
+		PrescriptionTemplateScrollView headerScroll = (PrescriptionTemplateScrollView) findViewById(R.id.template_item_scroll_title);
 		
 		templateHScrollViews.add(headerScroll);
 		template_drugs_lv = (ListView) findViewById(R.id.template_drugs_lv);
@@ -61,10 +63,10 @@ public class TemplateMange extends Activity {
 		template_drugs_lv.setAdapter(templatemanadapter);}
 		
 	
-	public void addHViews(final CHScrollView2 hScrollView) {
+	public void addHViews(final PrescriptionTemplateScrollView hScrollView) {
 		if(!templateHScrollViews.isEmpty()) {
 			int size = templateHScrollViews.size();
-			CHScrollView2 scrollView = templateHScrollViews.get(size - 1);
+			PrescriptionTemplateScrollView scrollView = templateHScrollViews.get(size - 1);
 			final int scrollX = scrollView.getScrollX();
 			
 			if(scrollX != 0) {
@@ -81,7 +83,7 @@ public class TemplateMange extends Activity {
 	}
 	
 	public void onScrollChanged(int l, int t, int oldl, int oldt){
-		for(CHScrollView2 scrollView : templateHScrollViews) {
+		for(PrescriptionTemplateScrollView scrollView : templateHScrollViews) {
 			//��ֹ�ظ�����
 			if(templateTouchView != scrollView)
 				scrollView.smoothScrollTo(l, t);
@@ -112,7 +114,7 @@ public class TemplateMange extends Activity {
 			if(v == null) {
 				v = LayoutInflater.from(context).inflate(res, null);
 				//��һ�γ�ʼ����ʱ��װ����
-				addHViews((CHScrollView2) v.findViewById(R.id.template_item_scroll));
+				addHViews((PrescriptionTemplateScrollView) v.findViewById(R.id.template_item_scroll));
 				View[] views = new View[to.length];
 				for(int i = 0; i < to.length; i++) {
 					View tv = v.findViewById(to[i]);;
@@ -134,7 +136,7 @@ public class TemplateMange extends Activity {
 	protected View.OnClickListener clickListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			Toast.makeText(TemplateMange.this, ((TextView)v).getText(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(PrescriptionTemplateMangeActivity.this, ((TextView)v).getText(), Toast.LENGTH_SHORT).show();
 		}
 	};
 }

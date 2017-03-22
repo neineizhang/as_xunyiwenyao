@@ -1,13 +1,4 @@
-package com.zll.xunyiwenyao;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.zll.xunyiwenyao.dbitem.Drug;
-import com.zll.xunyiwenyao.util.CHScrollView;
-import com.zll.xunyiwenyao.webservice.DrugWebService;
+package com.zll.xunyiwenyao.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,7 +18,17 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class New_prescription extends Activity {
+import com.zll.xunyiwenyao.R;
+import com.zll.xunyiwenyao.dbitem.Drug;
+import com.zll.xunyiwenyao.webservice.DrugWebService;
+import com.zll.xunyiwenyao.view.PrescriptionCreateScrollView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class PrescriptionCreateMainActivity extends Activity {
 
 	private Button add_drug,dialog_ok_btn;
 	private View view_custom;
@@ -49,22 +50,8 @@ public class New_prescription extends Activity {
 	
 	private ListView drugs_lv;
 	public HorizontalScrollView mTouchView;
-	protected List<CHScrollView> mHScrollViews =new ArrayList<CHScrollView>();  
-	
-	// static MultiValueMap<String, String> stringMultiValueMap = new
-	// LinkedMultiValueMap<>();
-	//
-	// static{
-	// stringMultiValueMap = new LinkedMultiValueMap<>();
-	// // 添加Key为name的
-	// stringMultiValueMap.add("感冒药", "感冒胶囊");
-	// stringMultiValueMap.add("感冒药", "板蓝根");
-	// stringMultiValueMap.add("感冒药", "39感冒灵");
-	// stringMultiValueMap.add("感冒药", "感冒冲剂");
-	// // 添加Key为domain的
-	// stringMultiValueMap.add("心脏病", "速效救心丸");
-	// stringMultiValueMap.add("心脏病", "心脏复苏丸");
-	// }
+	protected List<PrescriptionCreateScrollView> mHScrollViews =new ArrayList<PrescriptionCreateScrollView>();
+
 
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -97,7 +84,7 @@ public class New_prescription extends Activity {
 		
 		  //初始化dialog上的确定按钮
 		dialog_ok_btn = (Button) view_custom.findViewById(R.id.dialog_ok_btn);
-		ArrayAdapter<String> autvadapter = new ArrayAdapter<String>(New_prescription.
+		ArrayAdapter<String> autvadapter = new ArrayAdapter<String>(PrescriptionCreateMainActivity.
                 this, android.R.layout.simple_dropdown_item_1line, data);
         add_drugs_autv.setAdapter(autvadapter);
        
@@ -114,7 +101,7 @@ public class New_prescription extends Activity {
 		public boolean onChildClick(ExpandableListView expandableListView, View view, int parentPos, int childPos,
 					long l) {
 		  add_drugs_autv.setText(dataset.get(parentList[parentPos]).get(childPos)); 
-				Toast.makeText(New_prescription.this, dataset.get(parentList[parentPos]).get(childPos),
+				Toast.makeText(PrescriptionCreateMainActivity.this, dataset.get(parentList[parentPos]).get(childPos),
 						Toast.LENGTH_SHORT).show();
 				return true;
 			}
@@ -209,7 +196,7 @@ public class New_prescription extends Activity {
 		@Override
 		public View getChildView(int parentPos, int childPos, boolean b, View view, ViewGroup viewGroup) {
 			if (view == null) {
-				LayoutInflater inflater = (LayoutInflater) New_prescription.this
+				LayoutInflater inflater = (LayoutInflater) PrescriptionCreateMainActivity.this
 						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 				view = inflater.inflate(R.layout.add_drugs_dialog_item, null);
 			}
@@ -237,7 +224,7 @@ public class New_prescription extends Activity {
 			// TODO Auto-generated method stub
 			ViewHolderGroup groupHolder;
 			if (convertView == null) {
-				convertView = LayoutInflater.from(New_prescription.this).inflate(R.layout.item_exlist_group, parent, false);
+				convertView = LayoutInflater.from(PrescriptionCreateMainActivity.this).inflate(R.layout.item_exlist_group, parent, false);
 				groupHolder = new ViewHolderGroup();
 				groupHolder.tv_group_name = (TextView) convertView.findViewById(R.id.tv_group_name);
 				convertView.setTag(groupHolder);
@@ -255,8 +242,8 @@ public class New_prescription extends Activity {
 
 	private void initViews(){
 		List<Map<String, String>> datas = new ArrayList<Map<String,String>>();  
-        Map<String, String> data = null;  
-        CHScrollView headerScroll = (CHScrollView) findViewById(R.id.item_scroll_title);
+        Map<String, String> data = null;
+		PrescriptionCreateScrollView headerScroll = (PrescriptionCreateScrollView) findViewById(R.id.item_scroll_title);
       //添加头滑动事件   
         mHScrollViews.add(headerScroll); 
         
@@ -286,10 +273,10 @@ public class New_prescription extends Activity {
                  drugs_lv.setAdapter(adapter);  
   
 	}
-	 public void addHViews(final CHScrollView hScrollView) {  
+	 public void addHViews(final PrescriptionCreateScrollView hScrollView) {
 	        if(!mHScrollViews.isEmpty()) {  
-	            int size = mHScrollViews.size();  
-	            CHScrollView scrollView = mHScrollViews.get(size - 1);  
+	            int size = mHScrollViews.size();
+				PrescriptionCreateScrollView scrollView = mHScrollViews.get(size - 1);
 	            final int scrollX = scrollView.getScrollX();  
 	            //第一次满屏后，向下滑动，有一条数据在开始时未加入  
 	            if(scrollX != 0) {  
@@ -305,7 +292,7 @@ public class New_prescription extends Activity {
 	        mHScrollViews.add(hScrollView);  
 	    } 
 	 public void onScrollChanged(int l, int t, int oldl, int oldt){  
-	        for(CHScrollView scrollView : mHScrollViews) {  
+	        for(PrescriptionCreateScrollView scrollView : mHScrollViews) {
 	            //防止重复滑动  
 	            if(mTouchView != scrollView)  
 	                scrollView.smoothScrollTo(l, t);  
@@ -337,7 +324,7 @@ public class New_prescription extends Activity {
 	            if(v == null) {  
 	                v = LayoutInflater.from(context).inflate(res, null);  
 	                //第一次初始化的时候装进来  
-	                addHViews((CHScrollView) v.findViewById(R.id.item_scroll));  
+	                addHViews((PrescriptionCreateScrollView) v.findViewById(R.id.item_scroll));
 	                View[] views = new View[to.length];  
 	                for(int i = 0; i < to.length; i++) {  
 	                    View tv = v.findViewById(to[i]);;  
@@ -359,7 +346,7 @@ public class New_prescription extends Activity {
 	    protected View.OnClickListener clickListener = new View.OnClickListener() {  
 	        @Override  
 	        public void onClick(View v) {  
-	            Toast.makeText(New_prescription.this, ((TextView)v).getText(), Toast.LENGTH_SHORT).show();  
+	            Toast.makeText(PrescriptionCreateMainActivity.this, ((TextView)v).getText(), Toast.LENGTH_SHORT).show();
 	        }  
 	    };  
 	

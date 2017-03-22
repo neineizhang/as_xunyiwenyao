@@ -13,7 +13,7 @@
         android:gravity="center"
         android:text="药品名称" />
 
-<com.zll.xunyiwenyao.util.CHScrollView
+<com.zll.xunyiwenyao.view.PrescriptionCreateScrollView
         android:id="@+id/item_scroll"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -60,7 +60,7 @@
 
             
         </LinearLayout>
-    </com.zll.xunyiwenyao.util.CHScrollView>
+    </com.zll.xunyiwenyao.view.PrescriptionCreateScrollView>
 
 </LinearLayout>
     
