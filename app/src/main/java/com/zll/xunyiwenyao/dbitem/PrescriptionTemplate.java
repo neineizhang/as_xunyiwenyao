@@ -17,6 +17,12 @@ public class PrescriptionTemplate {
         setDrugmap(new HashMap<Drug, Integer>());
     }
 
+    public PrescriptionTemplate(int id, String name, int department, Map<Drug, Integer> drugmap) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.drugmap = drugmap;
+    }
 
     public int getId() {
         return id;
