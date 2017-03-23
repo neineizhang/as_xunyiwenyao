@@ -21,6 +21,7 @@ import com.zll.xunyiwenyao.webservice.PrescriptionTemplateWebService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class PrescriptionCreateActivity extends Activity   {
 
@@ -35,46 +36,20 @@ public class PrescriptionCreateActivity extends Activity   {
 
 
     private static final String[] data = new String[]{
-            "xiaozhuzhu", "xiaogougou", "xiaomaomao", "xiaotutu", "dagougou"
-    };
+           "xiaozhuzhu", "xiaogougou", "xiaomaomao", "xiaotutu", "dagougou"
+   };
+
+
 
     private void initData(){
         //数据准备
         gData = new ArrayList<Group>();
         iData = new ArrayList<ArrayList<Item>>();
 
-        for(String item : Utils.DEPARTMENT_ARRAY){
+        for(String item : Utils.DEPARTMENT_ARRAY) {
             gData.add(new Group(item));
             iData.add(new ArrayList<Item>());
         }
-
-//        gData.add(new Group("呼吸内科"));
-//        gData.add(new Group("消化内科"));
-//        gData.add(new Group("心血管科"));
-
-//        //AD组
-//        lData = new ArrayList<Item>();
-//        lData.add(new Item(R.drawable.item_picture,"剑圣"));
-//        lData.add(new Item(R.drawable.item_picture,"德莱文"));
-//        lData.add(new Item(R.drawable.item_picture,"男枪"));
-//        lData.add(new Item(R.drawable.item_picture,"韦鲁斯"));
-//        iData.add(lData);
-//        //AP组
-//        lData = new ArrayList<Item>();
-//        lData.add(new Item(R.drawable.item_picture, "提莫"));
-//        lData.add(new Item(R.drawable.item_picture,"安妮"));
-//        lData.add(new Item(R.drawable.item_picture, "天使"));
-//        lData.add(new Item(R.drawable.item_picture, "泽拉斯"));
-//        lData.add(new Item(R.drawable.item_picture,"狐狸"));
-//        iData.add(lData);
-//        //TANK组
-//        lData = new ArrayList<Item>();
-//        lData.add(new Item(R.drawable.item_picture, "诺手"));
-//        lData.add(new Item(R.drawable.item_picture, "德邦"));
-//        lData.add(new Item(R.drawable.item_picture, "奥拉夫"));
-//        lData.add(new Item(R.drawable.item_picture, "龙女"));
-//        lData.add(new Item(R.drawable.item_picture, "狗熊"));
-//        iData.add(lData);
 
         List<PrescriptionTemplate> templatelt = PrescriptionTemplateWebService.getAllTemplate();
         for(PrescriptionTemplate item : templatelt){

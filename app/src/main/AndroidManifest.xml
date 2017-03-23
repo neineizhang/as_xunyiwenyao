@@ -28,6 +28,13 @@
         <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryActivity"></activity>
         <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionTemplateActivity"></activity>
         <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionTemplateMangeActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryAllPrescriptionActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryApprovedActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryRefuseActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryToApproveActivity"></activity>
+        <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryToSubmitActivity"></activity>
+
+
         <activity android:name="Inspection_create"></activity>
         <activity android:name="Inspection_template"></activity>
         <activity android:name="Inspection_query"></activity>
