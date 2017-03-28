@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_myexam_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/prescription_query_bg_list_item"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/prescription_query_item_picture"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="15dp"
+        android:src="@drawable/item_picture" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/prescription_query_item_picture"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/prescription_lvitem_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="序号"
+            android:textColor="#030303"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/prescription_lvitem_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="名称 "
+            android:textColor="#666666"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/prescription_lvitem_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="生成日期"
+            android:textColor="#666666"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+   
+
+</RelativeLayout>

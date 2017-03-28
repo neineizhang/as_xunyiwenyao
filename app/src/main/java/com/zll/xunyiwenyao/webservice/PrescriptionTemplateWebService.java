@@ -43,4 +43,26 @@ public class PrescriptionTemplateWebService {
     public static List<PrescriptionTemplate> getAllTemplate(){
         return templatelt;
     }
+
+    public static List<String> getAllTemplateName(){
+        List<String> namelist = new ArrayList<String>();
+        for(PrescriptionTemplate item : templatelt){
+            namelist.add(item.getName());
+        }
+        return namelist;
+    }
+
+    public static void addPrescriptionTemplate(PrescriptionTemplate item){
+        templatelt.add(item);
+    }
+
+    public static PrescriptionTemplate getPrescriptionTemplateByName(String name){
+        for(PrescriptionTemplate item : templatelt){
+            if(item.getName().equals(name)){
+                return item;
+            }
+        }
+        return null;
+    }
+
 }

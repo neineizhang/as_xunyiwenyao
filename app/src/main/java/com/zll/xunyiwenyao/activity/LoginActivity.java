@@ -13,6 +13,9 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.zll.xunyiwenyao.R;
+import com.zll.xunyiwenyao.dbitem.Doctor;
+import com.zll.xunyiwenyao.dbitem.Utils;
+import com.zll.xunyiwenyao.webservice.DoctorWebService;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -41,7 +44,7 @@ public class LoginActivity extends Activity {
 		login_entrylog = (Button) findViewById(R.id.login_entrylog);
 		login_name = (EditText) findViewById(R.id.login_name);
 		login_pwd = (EditText) findViewById(R.id.login_pwd);
-		//注册
+		//娉ㄥ唽
 //		btn_register.setOnClickListener(new OnClickListener() {
 //
 //			@Override
@@ -59,62 +62,61 @@ public class LoginActivity extends Activity {
 				int doctor_id = select_doctor.getCheckedRadioButtonId();
 				String name = login_name.getText().toString();
 				String pwd = login_pwd.getText().toString();
-				
+
 				if (TextUtils.isEmpty(name) || TextUtils.isEmpty(pwd)) {
 					Toast.makeText(LoginActivity.this, "鐢ㄦ埛鍚嶆垨瀵嗙爜涓嶈兘涓虹┖", Toast.LENGTH_SHORT).show();
 				} else {
 					switch (doctor_id) {
-					case R.id.login_doctor_select1: {
-						if (name.equals("root") && pwd.equals("2222")) {
-							
-							Intent i=new Intent(LoginActivity.this,MainActivity.class);
-							startActivity(i);
-							login_name.setText(null);
-							login_pwd.setText(null);
-							
-						} else if (!name.equals("root")) {
-							Toast.makeText(LoginActivity.this, "涓嶅瓨鍦ㄨ鐢ㄦ埛", Toast.LENGTH_SHORT).show();
-							login_name.setText(null);
-							login_pwd.setText(null);
-						} else {
-							Toast.makeText(LoginActivity.this, "瀵嗙爜閿欒", Toast.LENGTH_SHORT).show();
-						
-							login_pwd.setText(null);
-						}
-						break;
-					}
-					case R.id.login_doctor_select2: {
-						if (name.equals("admin") && pwd.equals("1234")) {
-							
-							Intent i=new Intent(LoginActivity.this,MainActivity.class);
-							startActivity(i);
-							login_name.setText(null);
-							login_pwd.setText(null);
-							
-							
-						} else if (!name.equals("root")) {
-							Toast.makeText(LoginActivity.this, "涓嶅瓨鍦ㄨ鐢ㄦ埛", Toast.LENGTH_SHORT).show();
-							login_name.setText(null);
-							login_pwd.setText(null);
-						} else {
-							Toast.makeText(LoginActivity.this, "瀵嗙爜閿欒", Toast.LENGTH_SHORT).show();
-					
-							login_pwd.setText(null);
-						}
-						break;
-					}
+						case R.id.login_doctor_select1: {
 
-					default:
-						Toast.makeText(LoginActivity.this, "璇烽�夋嫨鍖荤敓绫诲埆", Toast.LENGTH_SHORT).show();
-						break;
+							Doctor islogin = DoctorWebService.isSuccessLogin(name, pwd, Utils.DOCTOR_TYPE.DOCTOR.ordinal());
+
+							if (islogin != null) {
+								Utils.LOGIN_DOCTOR = islogin;
+								Intent i=new Intent(LoginActivity.this,MainActivity.class);
+								startActivity(i);
+								login_name.setText(null);
+								login_pwd.setText(null);
+
+							} else {
+								Toast.makeText(LoginActivity.this, "LOGIN FAILED", Toast.LENGTH_SHORT).show();
+								login_name.setText(null);
+								login_pwd.setText(null);
+							}
+
+							break;
+						}
+						case R.id.login_doctor_select2: {
+
+							Doctor islogin = DoctorWebService.isSuccessLogin(name, pwd, Utils.DOCTOR_TYPE.ACCESSOR.ordinal());
+
+							if (islogin != null) {
+								Utils.LOGIN_DOCTOR = islogin;
+								Intent i=new Intent(LoginActivity.this,MainActivity.class);
+								startActivity(i);
+								login_name.setText(null);
+								login_pwd.setText(null);
+
+							} else {
+								Toast.makeText(LoginActivity.this, "LOGIN FAILED", Toast.LENGTH_SHORT).show();
+								login_name.setText(null);
+								login_pwd.setText(null);
+							}
+
+							break;
+						}
+
+						default:
+							Toast.makeText(LoginActivity.this, "Please select one type", Toast.LENGTH_SHORT).show();
+							break;
 					}
 				}
 			}
 		});
 
 	}//onCreate
-	
-	//注册
+
+	//娉ㄥ唽
 	public void showMyDialog() {
 //		Builder builder = new Builder(login.this);
 //		LayoutInflater inflater = LayoutInflater.from(login.this);
@@ -126,7 +128,7 @@ public class LoginActivity extends Activity {
 //		final EditText editPswd = (EditText) view.findViewById(R.id.editText2);
 //		final EditText editPswd_confirm = (EditText) view
 //				.findViewById(R.id.editText3);
-//		final AlertDialog dialog = builder.setTitle("学生信息注册").setView(view)
+//		final AlertDialog dialog = builder.setTitle("瀛︾敓淇℃伅娉ㄥ唽").setView(view)
 //				.create();
 //
 //		btn_confirm.setOnClickListener(new OnClickListener() {
@@ -149,15 +151,15 @@ public class LoginActivity extends Activity {
 //						values.put("password", MD5(editPswd.getText().toString()));
 //						db.insert("user", null, values);
 //						dialog.dismiss();
-//						Toast.makeText(login.this, "注册成功！",
+//						Toast.makeText(login.this, "娉ㄥ唽鎴愬姛锛�",
 //								Toast.LENGTH_SHORT).show();
 //					} else {
-//						Toast.makeText(login.this, "您注册的用户名已存在！",
+//						Toast.makeText(login.this, "鎮ㄦ敞鍐岀殑鐢ㄦ埛鍚嶅凡瀛樺湪锛�",
 //								Toast.LENGTH_SHORT).show();
 //					}
 //					cursor.close();
 //				} else {
-//					Toast.makeText(login.this, "您两次输入的密码不一样！",
+//					Toast.makeText(login.this, "鎮ㄤ袱娆¤緭鍏ョ殑瀵嗙爜涓嶄竴鏍凤紒",
 //							Toast.LENGTH_SHORT).show();
 //				}
 //			}
@@ -174,7 +176,7 @@ public class LoginActivity extends Activity {
 //		});
 
 	}
-	// MD5加密
+	// MD5鍔犲瘑
 	public static String MD5(String string) {
 		return encodeMD5String(string);
 	}

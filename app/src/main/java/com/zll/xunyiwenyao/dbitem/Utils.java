@@ -20,4 +20,10 @@ public class Utils {
 
     public static String[] DEPARTMENT_ARRAY = new String[]{"NEI KE", "WAI KE", "ER KE", "FU CHAN KE", "WU GUANKE", "PI FU KE"};
 
+    public static enum STATUS{
+        COMMITED,SAVED,APPROVED,REFUSED
+    };
+
+    public static Doctor LOGIN_DOCTOR;
+
 }

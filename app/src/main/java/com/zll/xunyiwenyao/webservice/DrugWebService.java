@@ -13,7 +13,7 @@ public class DrugWebService {
 
     private static List<Drug> druglist;
 
-    static {
+   static {
         Drug drug = null;
         druglist = new ArrayList<Drug>();
         drug = new Drug(1, "Drug A", "12g X 10", "12.00", "one day one time");
@@ -24,7 +24,7 @@ public class DrugWebService {
         druglist.add(drug);
         drug = new Drug(4, "Drug D", "12g X 13", "32.00", "one day one time");
         druglist.add(drug);
-        drug = new Drug(5, "Drug E", "12g X 120", "22.00", "一one day one time");
+        drug = new Drug(5, "Drug E", "12g X 120", "22.00", "one day one time");
         druglist.add(drug);
     }
 
@@ -35,4 +35,12 @@ public class DrugWebService {
     }
 
 
+    public static Drug getDrugByName(String name){
+        for(Drug item : druglist){
+            if(item.getName().equals(name)){
+                return item;
+            }
+        }
+        return null;
+    }
 }

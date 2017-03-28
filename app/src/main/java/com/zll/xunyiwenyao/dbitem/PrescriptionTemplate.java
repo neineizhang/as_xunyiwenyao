@@ -13,7 +13,7 @@ public class PrescriptionTemplate {
     private int department;
     private Map<Drug, Integer> drugmap;
 
-    private PrescriptionTemplate(){
+    public PrescriptionTemplate(){
         setDrugmap(new HashMap<Drug, Integer>());
     }
 

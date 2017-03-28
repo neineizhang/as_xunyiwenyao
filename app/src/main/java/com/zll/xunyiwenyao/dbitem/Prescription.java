@@ -14,10 +14,26 @@ public class Prescription {
     private Doctor doctor;
     private Patient patient;
     private Map<Drug, Integer> drugmap;
+    private int status;
 
-    private Prescription(){
+
+    public Prescription(){
         setDrugmap(new HashMap<Drug, Integer>());
     }
+
+
+
+    public Prescription(int id, String name, int department, Doctor doctor, Patient patient,
+                        Map<Drug, Integer> drugmap) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.doctor = doctor;
+        this.patient = patient;
+        this.drugmap = drugmap;
+    }
+
 
 
     public int getId() {
@@ -67,4 +83,18 @@ public class Prescription {
     public void setDrugmap(Map<Drug, Integer> drugmap) {
         this.drugmap = drugmap;
     }
+
+
+
+    public int getStatus() {
+        return status;
+    }
+
+
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+
 }
