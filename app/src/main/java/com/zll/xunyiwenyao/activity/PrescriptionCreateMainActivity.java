@@ -75,6 +75,7 @@ public class PrescriptionCreateMainActivity extends Activity {
 		other_information_et = (EditText) findViewById(R.id.other_information_et);
 
 		prescription_data_et.setText("");
+		//在as上运行出现了问题
 		doctor_name_et.setText(Utils.LOGIN_DOCTOR.getName());
 		checker_name_et.setText("");
 		other_information_et.setText("");
