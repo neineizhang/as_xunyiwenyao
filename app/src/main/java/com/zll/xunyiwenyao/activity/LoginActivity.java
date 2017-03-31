@@ -20,7 +20,7 @@ import com.zll.xunyiwenyao.webservice.DoctorWebService;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
-//import com.zll.xunyiwenyao.db.MyDBHelper;
+import com.zll.xunyiwenyao.db.MyDBHelper;
 
 public class LoginActivity extends Activity {
 
@@ -28,7 +28,8 @@ public class LoginActivity extends Activity {
 	private Button login_entrylog;
 	private EditText login_name, login_pwd;
 	private Button btn_register;
-	//private MyDBHelper myDBHelper;
+
+	private MyDBHelper myDBHelper;
 	private SQLiteDatabase db;
 
 
@@ -37,7 +38,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
 
-		//myDBHelper = new MyDBHelper(login.this,"xywy_db",null, 1);
+//		myDBHelper = new MyDBHelper(LoginActivity.this,"xywy.db",null, 1);
 //		db = myDBHelper.getReadableDatabase();
 
 		select_doctor = (RadioGroup) findViewById(R.id.login_doctor_select);

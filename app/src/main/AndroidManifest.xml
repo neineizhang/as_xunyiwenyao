@@ -35,10 +35,10 @@
         <activity android:name="com.zll.xunyiwenyao.activity.PrescriptionQueryToSubmitActivity"></activity>
 
 
-        <activity android:name="Inspection_create"></activity>
+        <activity android:name=".activity.InspectionCreateActivity"></activity>
         <activity android:name="Inspection_template"></activity>
-        <activity android:name="Inspection_query"></activity>
-        <activity android:name="Review"></activity>
+        <activity android:name=".activity.InspectionQueryActivity"></activity>
+        <activity android:name=".activity.ReviewActivity"></activity>
         <activity android:name="Report"></activity>
     </application>
 

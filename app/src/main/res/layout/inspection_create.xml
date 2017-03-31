@@ -108,12 +108,14 @@
 	        <View  android:layout_height="1px" 
 	           android:layout_width="match_parent"
 	           android:background="#BFBFBF" />
+
+
 	         <LinearLayout
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1" >
 	
-	          	  <TextView
+				 <TextView
 	                android:id="@+id/sexy_view"
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
@@ -124,7 +126,7 @@
 			    	android:layout_height="match_parent"
 			    	android:background="#BFBFBF"
 			    	android:layout_gravity="center_horizontal" />
-	
+
 	           		 <EditText
 	                android:id="@+id/sexy_text"
 	                android:layout_width="wrap_content"

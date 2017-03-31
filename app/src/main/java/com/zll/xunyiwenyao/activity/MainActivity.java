@@ -7,12 +7,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.zll.xunyiwenyao.Inspection_create;
-import com.zll.xunyiwenyao.Inspection_query;
 import com.zll.xunyiwenyao.Inspection_template;
 import com.zll.xunyiwenyao.R;
 import com.zll.xunyiwenyao.Report;
-import com.zll.xunyiwenyao.Review;
 
 public class MainActivity extends Activity{
 	
@@ -83,7 +80,7 @@ public class MainActivity extends Activity{
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Intent i5=new Intent(MainActivity.this, Inspection_create.class);
+			Intent i5=new Intent(MainActivity.this, InspectionCreateActivity.class);
 			startActivity(i5);
 		}
     	   
@@ -105,7 +102,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i8=new Intent(MainActivity.this,Inspection_query.class);
+				Intent i8=new Intent(MainActivity.this,InspectionQueryActivity.class);
 				startActivity(i8);
 				
 			}
@@ -116,7 +113,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i9=new Intent(MainActivity.this,Review.class);
+				Intent i9=new Intent(MainActivity.this,ReviewActivity.class);
 				startActivity(i9);
 				
 			}
