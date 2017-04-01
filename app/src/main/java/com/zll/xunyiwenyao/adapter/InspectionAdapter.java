@@ -24,15 +24,17 @@ public class InspectionAdapter extends BaseAdapter{
     private List<Inspection> itemlist = new ArrayList<Inspection>();
     private Context mContext;
 
-    public InspectionAdapter(Context mContext)
+    public InspectionAdapter(List<Inspection> ins_list, Context mContext)
     {   this.mContext = mContext;
-        this.itemlist = InspectionWebService.getAllInspection();
+        this.itemlist = ins_list;
     }
+
 
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
         return itemlist.size();
+//        return 1;
     }
 
     @Override
@@ -61,13 +63,13 @@ public class InspectionAdapter extends BaseAdapter{
         TextView ins_list_state = (TextView) view
                 .findViewById(R.id.ins_list_state);
 
-//        ins_list_name.setText(itemlist.get(position).getPatientName().toString());
-//        ins_list_date.setText(itemlist.get(position).getInspectionDate().toString());
-//        ins_list_state.setText(itemlist.get(position).getInspectionState().toString());
+        ins_list_name.setText(itemlist.get(position).getPatientName().toString());
+        ins_list_date.setText(itemlist.get(position).getInspectionDate().toString());
+        ins_list_state.setText(itemlist.get(position).getInspectionState().toString());
 
-        ins_list_name.setText("李四");
-        ins_list_date.setText("B超");
-        ins_list_state.setText("1");
+//        ins_list_name.setText("李四");
+//        ins_list_date.setText("B超");
+//        ins_list_state.setText("1");
         return view;
     }
 }

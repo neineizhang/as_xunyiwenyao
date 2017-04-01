@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.zll.xunyiwenyao.Inspection_template;
 import com.zll.xunyiwenyao.R;
 import com.zll.xunyiwenyao.Report;
 
@@ -91,7 +90,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i7=new Intent(MainActivity.this,Inspection_template.class);
+				Intent i7=new Intent(MainActivity.this,InspectionTemplateActivity.class);
 				startActivity(i7);
 				
 			}

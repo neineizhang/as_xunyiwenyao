@@ -22,8 +22,8 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 	private EditText ins_name, ins_content, ins_date, ins_comment;
 	private EditText pat_name, pat_sexy, pat_age, pat_dia;
 	private Button btn_save, btn_update;
-	private MyDBHelper mySqlHelper;
-	private SQLiteDatabase db;
+//	private MyDBHelper mySqlHelper;
+//	private SQLiteDatabase db;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,8 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 		topbar = (TopBarView)findViewById(R.id.topbar);
 		topbar.setClickListener(this);
 
-		MyDBHelper myDBHelper = new MyDBHelper(InspectionCreateActivity.this, "xywy.db",null, 1);
-		db = myDBHelper.getWritableDatabase();
+//		MyDBHelper myDBHelper = new MyDBHelper(InspectionCreateActivity.this, "xywy.db",null, 1);
+//		db = myDBHelper.getWritableDatabase();
 
 		//获取控件信息
 		ins_name = (EditText)findViewById(R.id.editText1);
