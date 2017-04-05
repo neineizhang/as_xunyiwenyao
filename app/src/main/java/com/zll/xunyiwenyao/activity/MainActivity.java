@@ -8,7 +8,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.zll.xunyiwenyao.R;
-import com.zll.xunyiwenyao.Report;
 
 public class MainActivity extends Activity{
 	
@@ -25,7 +24,6 @@ public class MainActivity extends Activity{
 		prescription_examine = (Button) findViewById(R.id.prescription_examine);
 		
 		inspection_create = (Button) findViewById(R.id.inspection_create);
-		inspection_template = (Button) findViewById(R.id.inspection_template);
 		inspection_query = (Button) findViewById(R.id.inspection_query);
 		
 		review = (Button) findViewById(R.id.review);
@@ -85,16 +83,7 @@ public class MainActivity extends Activity{
     	   
        });
     	   
-       inspection_template.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent i7=new Intent(MainActivity.this,InspectionTemplateActivity.class);
-				startActivity(i7);
-				
-			}
-		});
+
        
        inspection_query.setOnClickListener(new OnClickListener() {
 			
@@ -123,7 +112,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i10=new Intent(MainActivity.this,Report.class);
+				Intent i10=new Intent(MainActivity.this,ReportCreateActivity.class);
 				startActivity(i10);
 				
 			}

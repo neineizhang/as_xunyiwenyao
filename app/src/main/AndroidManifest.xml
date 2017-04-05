@@ -36,10 +36,10 @@
 
 
         <activity android:name=".activity.InspectionCreateActivity"></activity>
-        <activity android:name="Inspection_template"></activity>
+        <activity android:name=".activity.InspectionTemplateActivity"></activity>
         <activity android:name=".activity.InspectionQueryActivity"></activity>
         <activity android:name=".activity.ReviewActivity"></activity>
-        <activity android:name="Report"></activity>
+        <activity android:name=".activity.ReportCreateActivity"></activity>
     </application>
 
 </manifest>

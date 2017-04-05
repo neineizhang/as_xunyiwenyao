@@ -58,150 +58,172 @@
     />
     
     <!--病人基本信息 -->
-       <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
 
-	        <TextView
-	            android:id="@+id/textView2"
-	            android:layout_width="fill_parent"
-	            android:layout_height="0dp"
-	            android:text="病人信息"
-	            android:textColor="#000000"
-	        	android:textStyle="bold"
-	        	android:background="#B0B0B0"
-	        	android:textSize="18sp"
-	            android:layout_weight="2" />
-        
-	        <View  android:layout_height="1px" 
-	           android:layout_width="match_parent"
-	           android:background="#BFBFBF"/>
+         <TextView
+			 android:id="@+id/textView2"
+			 android:layout_width="fill_parent"
+			 android:layout_height="0dp"
+			 android:layout_weight="2"
+			 android:background="#B0B0B0"
+			 android:text="病人信息"
+			 android:textColor="#000000"
+			 android:textSize="18sp"
+			 android:textStyle="bold" />
 
-	        <LinearLayout
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1" >
-	
-	            <TextView
-	                android:id="@+id/name_view"
-	                android:layout_width="0dp"
-	                android:layout_height="wrap_content"
-	                android:text="姓名" 
-	                android:layout_weight="1"/>
-	             <View  
-			    	android:layout_width="1px" 
-			    	android:layout_height="match_parent"
-			    	android:background="#BFBFBF"
-			    	android:layout_gravity="center_horizontal"/>
-	
-	            <EditText
-	                android:id="@+id/name_text"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_weight="3" />
-	
-	        </LinearLayout>
-	        
-  
-       
-	        <View  android:layout_height="1px" 
-	           android:layout_width="match_parent"
-	           android:background="#BFBFBF" />
+         <View
+			 android:layout_width="match_parent"
+			 android:layout_height="1px"
+			 android:background="#BFBFBF" />
+
+         <LinearLayout
+			 android:layout_width="match_parent"
+			 android:layout_height="wrap_content"
+			 android:layout_weight="1">
+
+             <TextView
+				 android:id="@+id/name_view"
+				 android:layout_width="0dp"
+				 android:layout_height="wrap_content"
+				 android:layout_weight="1"
+				 android:text="姓名" />
+              <View
+				  android:layout_width="1px"
+				  android:layout_height="match_parent"
+				  android:layout_gravity="center_horizontal"
+				  android:background="#BFBFBF" />
+
+             <EditText
+				 android:id="@+id/name_text"
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content"
+				 android:layout_weight="3" />
+
+         </LinearLayout>
 
 
-	         <LinearLayout
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1" >
-	
-				 <TextView
-	                android:id="@+id/sexy_view"
-	                android:layout_width="0dp"
-	                android:layout_height="wrap_content"
-	                android:text="性别" 
-	                android:layout_weight="1"/>
-	                <View  
-			    	android:layout_width="1px" 
-			    	android:layout_height="match_parent"
-			    	android:background="#BFBFBF"
-			    	android:layout_gravity="center_horizontal" />
 
-	           		 <EditText
-	                android:id="@+id/sexy_text"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_weight="3"  />
+         <View
+			 android:layout_width="match_parent"
+			 android:layout_height="1px"
 
-        	</LinearLayout>
-        
-  
-       
-	        <View  android:layout_height="1px" 
-	           android:layout_width="match_parent"
-	           android:background="#BFBFBF" />
-	       
-	        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:layout_weight="1">
+			 android:background="#BFBFBF" />
 
-            	<TextView
-	                android:id="@+id/age_view"
-	                android:layout_width="0dp"
-	                android:layout_height="wrap_content"
-	                android:text="年龄" 
-	                android:layout_weight="1"/>
-                <View  
-			    	android:layout_width="1px" 
-			    	android:layout_height="match_parent"
-			    	android:background="#BFBFBF"
-			    	android:layout_gravity="center_horizontal" />
 
-	            <EditText
-	                android:id="@+id/age_text"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_weight="3"/>
+          <LinearLayout
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content"
+			  android:layout_weight="1"
+			  android:gravity="center">
 
-      		  </LinearLayout>
-       
-		        <View  android:layout_height="1px" 
-		           android:layout_width="match_parent"
-		           android:background="#BFBFBF"/>
+              <TextView
+				  android:id="@+id/sexy_view"
+				  android:layout_width="0dp"
+				  android:layout_height="wrap_content"
+				  android:layout_weight="3.92"
+				  android:text="性别" />
+                 <View
+					 android:layout_width="1px"
+					 android:layout_height="match_parent"
+					 android:layout_gravity="center_horizontal"
+					 android:background="#BFBFBF" />
+              <RadioGroup
+				  android:id="@+id/sex_rg"
+				  android:layout_width="287dp"
+				  android:layout_height="wrap_content"
+				  android:gravity="center"
+				  android:orientation="horizontal"
+				  android:layout_weight="0.36">
 
-		          <LinearLayout
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content" 
-		            android:layout_weight="1">
+				  <RadioButton
+					  android:id="@+id/sex_rb1"
+					  android:layout_width="wrap_content"
+					  android:layout_height="wrap_content"
+					  android:checked="true"
+					  android:text="男" />
 
-		            <TextView
-		                android:id="@+id/clinical_diagnosis_view"
-		                android:layout_width="0dp"
-		                android:layout_height="wrap_content"
-		                android:text="临床诊断" 
-		                android:layout_weight="1"/>
-		             <View  
-		    	       android:layout_width="1px" 
-				    	android:layout_height="match_parent"
-				    	android:background="#BFBFBF"
-				    	android:layout_gravity="center_horizontal" />
+				  <RadioButton
+					  android:id="@+id/sex_rb2"
+					  android:layout_width="wrap_content"
+					  android:layout_height="wrap_content"
+					  android:text="女" />
+			  </RadioGroup>
 
-		            <EditText
-		                android:id="@+id/clinical_diagnosis_text"
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content"
-		                android:layout_weight="3" />
+         </LinearLayout>
 
-      			  </LinearLayout>
-        
-       
-			        <View  android:layout_height="1px" 
-			           android:layout_width="match_parent"
-			           android:background="#BFBFBF" />
-   		 </LinearLayout>
-   		 
-       <!-- 检验信息 -->
+
+
+         <View
+			 android:layout_width="match_parent"
+			 android:layout_height="1px"
+			 android:background="#BFBFBF" />
+
+         <LinearLayout
+			 android:layout_width="match_parent"
+			 android:layout_height="wrap_content"
+			 android:layout_weight="1">
+
+             <TextView
+				 android:id="@+id/age_view"
+				 android:layout_width="0dp"
+				 android:layout_height="wrap_content"
+				 android:layout_weight="1"
+				 android:text="年龄" />
+             <View
+				 android:layout_width="1px"
+				 android:layout_height="match_parent"
+				 android:layout_gravity="center_horizontal"
+				 android:background="#BFBFBF" />
+
+             <EditText
+				 android:id="@+id/age_text"
+				 android:layout_width="wrap_content"
+				 android:layout_height="wrap_content"
+				 android:layout_weight="3" />
+
+             </LinearLayout>
+
+             <View
+				 android:layout_width="match_parent"
+				 android:layout_height="1px"
+				 android:background="#BFBFBF" />
+
+               <LinearLayout
+				   android:layout_width="match_parent"
+				   android:layout_height="wrap_content"
+				   android:layout_weight="1">
+
+                 <TextView
+					 android:id="@+id/clinical_diagnosis_view"
+					 android:layout_width="0dp"
+					 android:layout_height="wrap_content"
+					 android:layout_weight="1"
+					 android:text="临床诊断" />
+                  <View
+					  android:layout_width="1px"
+					  android:layout_height="match_parent"
+					  android:layout_gravity="center_horizontal"
+					  android:background="#BFBFBF" />
+
+                 <EditText
+					 android:id="@+id/clinical_diagnosis_text"
+					 android:layout_width="wrap_content"
+					 android:layout_height="wrap_content"
+					 android:layout_weight="3" />
+
+                 </LinearLayout>
+
+
+                 <View
+					 android:layout_height="1px"
+					 android:layout_width="match_parent"
+					 android:background="#BFBFBF" />
+         </LinearLayout>
+
+	<!-- 检验信息 -->
          <LinearLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
@@ -225,7 +247,7 @@
 	        <EditText
 		        android:id="@+id/inspection_text"
 		        android:layout_width="match_parent"
-		        android:layout_height="120sp"
+		        android:layout_height="73dp"
 		        android:ems="10"
 		        android:inputType="textMultiLine" >
 			  </EditText>
@@ -251,7 +273,7 @@
 	           android:layout_width="match_parent"
 	           android:background="#BFBFBF"/>    
 
-	        <LinearLayout
+				 <LinearLayout
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1" >
@@ -272,11 +294,45 @@
 	                android:id="@+id/date_text"
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
-	                android:layout_weight="3" 
+	                android:layout_weight="2.2"
 	                android:inputType="date"/>
+				<Button
+					android:id="@+id/date_choose"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="选择" />
 	
 	        </LinearLayout>
-	        
+
+
+				 <View  android:layout_height="1px"
+					 android:layout_width="match_parent"
+					 android:background="#BFBFBF"/>
+
+				 <LinearLayout
+					 android:layout_width="match_parent"
+					 android:layout_height="wrap_content"
+					 android:layout_weight="1" >
+
+					 <TextView
+						 android:id="@+id/doctor_view"
+						 android:layout_width="0dp"
+						 android:layout_height="wrap_content"
+						 android:text="医师"
+						 android:layout_weight="1"/>
+					 <View
+						 android:layout_width="1px"
+						 android:layout_height="match_parent"
+						 android:background="#BFBFBF"
+						 android:layout_gravity="center_horizontal"/>
+
+					 <EditText
+						 android:id="@+id/doctor_text"
+						 android:layout_width="wrap_content"
+						 android:layout_height="wrap_content"
+						 android:layout_weight="3" />
+
+				 </LinearLayout>
 	        <View  android:layout_height="1px" 
 	           android:layout_width="match_parent"
 	           android:background="#BFBFBF"/>    

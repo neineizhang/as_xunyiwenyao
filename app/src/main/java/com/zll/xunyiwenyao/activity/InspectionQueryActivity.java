@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;;
@@ -86,7 +88,7 @@ public class InspectionQueryActivity extends Activity implements onTitleBarClick
 
         final EditText iname = (EditText)view.findViewById(R.id.editText1);
         final EditText pname = (EditText)view.findViewById(R.id.name_text);
-        final EditText psex = (EditText)view.findViewById(R.id.sexy_text);
+        final EditText psex = (EditText)view.findViewById(R.id.sex_text);
         final EditText page = (EditText)view.findViewById(R.id.age_text);
         final EditText pdiagnosis = (EditText)view.findViewById(R.id.clinical_diagnosis_text);
         final EditText icontent = (EditText)view.findViewById(R.id.inspection_text);
@@ -131,22 +133,24 @@ public class InspectionQueryActivity extends Activity implements onTitleBarClick
 
             @Override
             public void onClick(View arg0) {
-                Inspection newins = new Inspection();
-                newins.setInspectionName(iname.getText().toString());
-                newins.setPatientName(pname.getText().toString());
-                newins.setPatientSex(psex.getText().toString());
-                newins.setPatientAge(page.getText().toString());
-                newins.setPatientDiag(pdiagnosis.getText().toString());
-                newins.setInspectionText(icontent.getText().toString());
-                newins.setInspectionDate(idate.getText().toString());
-                newins.setInspectionComment(icomment.getText().toString());
-                newins.setInspectionState(istate);
+                if(istate.equals("未提交")){
+                    Inspection newins = new Inspection();
+                    newins.setInspectionName(iname.getText().toString());
+                    newins.setPatientName(pname.getText().toString());
+                    newins.setPatientSex(psex.getText().toString());
+                    newins.setPatientAge(page.getText().toString());
+                    newins.setPatientDiag(pdiagnosis.getText().toString());
+                    newins.setInspectionText(icontent.getText().toString());
+                    newins.setInspectionDate(idate.getText().toString());
+                    newins.setInspectionComment(icomment.getText().toString());
+                    newins.setInspectionState(istate);
 
-                InspectionWebService.updateInspectionByPosition(temp,newins);
+                    InspectionWebService.updateInspectionByPosition(temp,newins);
 
 
-                dialog.dismiss();
-                Toast.makeText(InspectionQueryActivity.this, "修改成功，请点击右上角刷新！", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                    Toast.makeText(InspectionQueryActivity.this, "修改成功，请点击右上角刷新！", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         //点击取消button

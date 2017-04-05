@@ -7,15 +7,16 @@ package com.zll.xunyiwenyao.dbitem;
 
 
 public class Inspection {
-    private String inspection_name;
-    private String patient_name;
-    private String patient_sex;
-    private String patient_age;
-    private String patient_diag;
-    private String inspection_text;
-    private String inspection_date;
-    private String inspection_comment;
-    private String inspection_state;
+    private int id;     //系统自增的唯一id
+    private String name;//检查单名称，必填项
+    private String pname;//患者名称，必填项
+    private String psex;
+    private String page;
+    private String diagnose;
+    private String content;//检查单内容，必填项
+    private String date;
+    private String comment;
+    private String state;
     private boolean checked;
 
     public Inspection(){
@@ -25,79 +26,79 @@ public class Inspection {
                       String pat_diag, String ins_text, String ins_date, String ins_comment,
                       String ins_state){
         super();
-        this.inspection_name = ins_name;
-        this.patient_name = pat_name;
-        this.patient_sex = pat_sex;
-        this.patient_age = pat_age;
-        this.patient_diag = pat_diag;
-        this.inspection_text = ins_text;
-        this.inspection_date = ins_date;
-        this.inspection_comment = ins_comment;
-        this.inspection_state = ins_state;
+        this.name = ins_name;
+        this.pname = pat_name;
+        this.psex = pat_sex;
+        this.page = pat_age;
+        this.diagnose = pat_diag;
+        this.content = ins_text;
+        this.date = ins_date;
+        this.comment = ins_comment;
+        this.state = ins_state;
     }
     public void setChecked(boolean checked) {
         this.checked = checked;
     }
     public String getInspectionName() {
-        return inspection_name;
+        return name;
     }
     public void setInspectionName(String ins_name) {
-        this.inspection_name = ins_name;
+        this.name = ins_name;
     }
 
     public String getPatientName() {
-        return patient_name;
+        return pname;
     }
     public void setPatientName(String pat_name) {
-        this.patient_name = pat_name;
+        this.pname = pat_name;
     }
 
     public String getPatientSex() {
-        return patient_sex;
+        return psex;
     }
     public void setPatientSex(String sex) {
-        this.patient_sex = sex;
+        this.psex = sex;
     }
 
     public String getPatientAge() {
-        return patient_age;
+        return page;
     }
     public void setPatientAge(String age) {
-        this.patient_age = age;
+        this.page = age;
     }
 
     public String getPatientDiag() {
-        return patient_diag;
+        return diagnose;
     }
     public void setPatientDiag(String diag) {
-        this.patient_diag = diag;
+        this.diagnose = diag;
     }
 
     public String getInspectionText() {
-        return inspection_text;
+        return content;
     }
     public void setInspectionText(String text) {
-        this.inspection_text = text;
+        this.content = text;
     }
 
     public String getInspectionDate() {
-        return inspection_date;
+        return date;
     }
     public void setInspectionDate(String ins_date) {
-        this.inspection_date = ins_date;
+        this.date = ins_date;
     }
 
     public String getInspectionComment() {
-        return inspection_comment;
+        return comment;
     }
     public void setInspectionComment(String comment) {
-        this.inspection_comment = comment;
+        this.comment = comment;
     }
 
     public String getInspectionState() {
-        return inspection_state;
+        return state;
     }
     public void setInspectionState(String state) {
-        this.inspection_state = state;
+        this.state = state;
     }
 }

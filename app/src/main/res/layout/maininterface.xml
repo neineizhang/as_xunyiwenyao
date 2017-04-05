@@ -87,12 +87,7 @@
             android:layout_weight="1"
             android:text="检查单开具" />
 
-        <Button
-            android:id="@+id/inspection_template"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="检查单模板" />
+
 
         <Button
             android:id="@+id/inspection_query"
@@ -106,7 +101,7 @@
         android:id="@+id/other_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="药物反应报告" 
+        android:text="药品评价和反映报告"
         android:layout_weight="0.1"/>
 
     <LinearLayout
@@ -120,14 +115,20 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="用户药品评价浏览" />
+            android:text="药品评价填写" />
 
         <Button
             android:id="@+id/report"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="药物反应报告填写" />
+            android:text="反应报告填写" />
+        <Button
+            android:id="@+id/other_query"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="评价和报告管理" />
     </LinearLayout>
 
 </LinearLayout>

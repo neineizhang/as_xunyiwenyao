@@ -1,5 +1,6 @@
 package com.zll.xunyiwenyao.webservice;
 
+import com.zll.xunyiwenyao.dbitem.Doctor;
 import com.zll.xunyiwenyao.dbitem.Inspection;
 import java.util.List;
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ public class InspectionWebService {
     public static List<Inspection> inspectionList = new ArrayList<Inspection>();
 
     static{
+        Doctor doctor = null;
+
         Inspection inspection1 = null;
         Inspection inspection2 = null;
 

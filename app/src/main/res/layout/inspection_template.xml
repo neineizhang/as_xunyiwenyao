@@ -22,6 +22,21 @@
         custom:leftBtn="@drawable/back_page"   
         custom:rightBtn="@drawable/edit_normal" />
 
-    </LinearLayout>   
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询数据" />
+
+    <TextView
+        android:id="@+id/query_result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="查询结果"
+        android:textColor="#FF4500"
+        android:textSize="18sp" />
 
 </LinearLayout>
