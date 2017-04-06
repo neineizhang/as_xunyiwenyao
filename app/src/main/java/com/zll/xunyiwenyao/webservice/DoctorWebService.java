@@ -13,27 +13,27 @@ import java.util.List;
 public class DoctorWebService {
 
     private static int MAX_ID = 1;
-    private static List<Doctor> dctorlist;
+    private static List<Doctor> doctorlist;
 
     static {
         Doctor doctor = null;
-        dctorlist = new ArrayList<Doctor>();
+        doctorlist = new ArrayList<Doctor>();
         doctor = new Doctor(1, "doctor A", Utils.DOCTOR_TYPE.DOCTOR.ordinal(), "Hospital 1", "root", "2222");
-        dctorlist.add(doctor);
+        doctorlist.add(doctor);
         doctor = new Doctor(2, "doctor B", Utils.DOCTOR_TYPE.DOCTOR.ordinal(), "Hospital 2", "admin", "admin");
-        dctorlist.add(doctor);
+        doctorlist.add(doctor);
         doctor = new Doctor(3, "doctor C", Utils.DOCTOR_TYPE.ACCESSOR.ordinal(), "Hospital 3", "doctor", "doctor");
-        dctorlist.add(doctor);
+        doctorlist.add(doctor);
         MAX_ID = 4;
     }
 
     public static List<Doctor> getAllDoctor(){
-        return dctorlist;
+        return doctorlist;
     }
 
     public static List<Doctor> getDoctorByType(int type){
         List<Doctor> resultlist = new ArrayList<Doctor>();
-        for(Doctor doctor : dctorlist){
+        for(Doctor doctor : doctorlist){
             if(doctor.getType() == type){
                 resultlist.add(doctor);
             }
@@ -42,6 +42,7 @@ public class DoctorWebService {
     }
 
     public static void addDoctor(Doctor item){
+        doctorlist.add(item);
         item.setId(MAX_ID);
         MAX_ID++;
     }
@@ -56,6 +57,14 @@ public class DoctorWebService {
         }
         return null;
     }
+    //返回所有的use_rname
+    public static List<String> getAllUsername(){
+        List<String> usernamelist = new ArrayList<String>();
+        for(Doctor doctor:doctorlist)
+            usernamelist.add(doctor.getUsername());
+        return usernamelist;
+    }
+
 
 
 }

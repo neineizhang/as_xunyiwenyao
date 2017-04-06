@@ -8,8 +8,8 @@ public class Doctor {
     private int id;//系统自增
     private String user_name;//用户名，注册时填的唯一名称
     private String real_name;//真实姓名
-    private int sex;//性别
-    private int type;//0-执业医生，1-审核医生
+    private int sex;//性别，Enum写在utils文件中
+    private int type;//类型，Enum写在utils文件中
     private String passwd;//密码
 
     private String photo;//医生照片路径
@@ -35,6 +35,13 @@ public class Doctor {
         this.user_name = username;
         this.passwd = passwd;
     }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return user_name;
@@ -44,6 +51,22 @@ public class Doctor {
         this.user_name = username;
     }
 
+    public String getRealName() {
+        return real_name;
+    }
+
+    public void setRealName(String name) {
+        this.real_name = name;
+    }
+
+    public int getSex() {return sex;}
+
+    public void setSex(int s) {this.sex=s;}
+
+    public int getType() {return type;}
+
+    public void setType(int t) {this.type=t;}
+
     public String getPasswd() {
         return passwd;
     }
@@ -52,29 +75,9 @@ public class Doctor {
         this.passwd = passwd;
     }
 
-    public int getId() {
-        return id;
-    }
+    public String getTitle() {return title;}
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return real_name;
-    }
-
-    public void setName(String name) {
-        this.real_name = name;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
+    public void setTitle(String t){this.title=t;}
 
     public String getHospital() {
         return hospital;
@@ -83,4 +86,16 @@ public class Doctor {
     public void setHospital(String hospital) {
         this.hospital = hospital;
     }
+
+    public String getDepartment(){return department;}
+
+    public void setDepartment(String d){this.department=d;}
+
+    public String getGoodat(){return goodat;}
+
+    public void setGoodat(String g){this.goodat=g;}
+
+    public String getProfile(){return profile;}
+
+    public void setProfile (String p) {this.profile=p;}
 }

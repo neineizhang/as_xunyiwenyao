@@ -58,12 +58,7 @@
             android:layout_weight="1"
             android:text="处方查询" />
 
-        <Button
-            android:id="@+id/prescription_examine"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="处方审核" />
+
         
     </LinearLayout>
 
@@ -101,7 +96,7 @@
         android:id="@+id/other_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="药品评价和反映报告"
+        android:text="其他"
         android:layout_weight="0.1"/>
 
     <LinearLayout
@@ -115,20 +110,20 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="药品评价填写" />
+            android:text="药品评价提交" />
 
         <Button
             android:id="@+id/report"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="反应报告填写" />
+            android:text="反应报告提交" />
         <Button
-            android:id="@+id/other_query"
+            android:id="@+id/information_manage"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="评价和报告管理" />
+            android:text="个人资料管理" />
     </LinearLayout>
 
 </LinearLayout>

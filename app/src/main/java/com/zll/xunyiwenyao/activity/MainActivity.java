@@ -11,8 +11,9 @@ import com.zll.xunyiwenyao.R;
 
 public class MainActivity extends Activity{
 	
-	private Button prescription_create,prescription_query,prescription_template,prescription_examine;
+	private Button prescription_create,prescription_query,prescription_template;
 	private Button inspection_create,inspection_template,inspection_query,review,report;
+	private Button information_manage;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,13 +22,14 @@ public class MainActivity extends Activity{
 		prescription_create = (Button) findViewById(R.id.prescription_create);
 		prescription_query = (Button) findViewById(R.id.prescription_query);
 		prescription_template = (Button) findViewById(R.id.prescription_template);
-		prescription_examine = (Button) findViewById(R.id.prescription_examine);
+
 		
 		inspection_create = (Button) findViewById(R.id.inspection_create);
 		inspection_query = (Button) findViewById(R.id.inspection_query);
 		
 		review = (Button) findViewById(R.id.review);
 		report = (Button) findViewById(R.id.report);
+		information_manage = (Button)findViewById(R.id.information_manage);
 		
 		prescription_create.setOnClickListener(new OnClickListener() {
 			
@@ -60,17 +62,7 @@ public class MainActivity extends Activity{
 				
 			}
 		});
-       
-       prescription_examine.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent i4=new Intent(MainActivity.this,PrescriptionExamineActivity.class);
-				startActivity(i4);
-				
-			}
-		});
+
        
        inspection_create.setOnClickListener(new OnClickListener() {
 
@@ -115,6 +107,17 @@ public class MainActivity extends Activity{
 				Intent i10=new Intent(MainActivity.this,ReportCreateActivity.class);
 				startActivity(i10);
 				
+			}
+		});
+
+		information_manage.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i11=new Intent(MainActivity.this,DoctorInformationManageActivity.class);
+				startActivity(i11);
+
 			}
 		});
 	}

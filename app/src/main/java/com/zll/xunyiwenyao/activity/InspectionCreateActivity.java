@@ -3,6 +3,7 @@ package com.zll.xunyiwenyao.activity;
 import com.zll.xunyiwenyao.R;
 import com.zll.xunyiwenyao.db.MyDBHelper;
 import com.zll.xunyiwenyao.dbitem.Inspection;
+import com.zll.xunyiwenyao.dbitem.Utils;
 import com.zll.xunyiwenyao.util.TopBarView;
 import com.zll.xunyiwenyao.util.TopBarView.onTitleBarClickListener;
 import com.zll.xunyiwenyao.webservice.InspectionWebService;
@@ -26,14 +27,14 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 
 	private  TopBarView topbar;
 	private EditText ins_name, ins_content, ins_date, ins_comment;
-	private EditText pat_name,  pat_age, pat_dia;
+	private EditText pat_name,  pat_age, pat_dia, doctor_name;
 	private Button date_choose;
-	private Button btn_save, btn_update;
+	private Button btn_save, btn_commit;
 	private RadioGroup sex_rg;
 	private RadioButton sex_rb1, sex_rb2;
 	private Calendar calendar;
 	private DatePickerDialog datePD;
-	private String sex="男";
+	private int sex= Utils.SEX.MAN.ordinal();
 
 	private DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
 
@@ -45,8 +46,6 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 		}
 	};
 
-//	private MyDBHelper mySqlHelper;
-//	private SQLiteDatabase db;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +55,6 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 		topbar = (TopBarView)findViewById(R.id.topbar);
 		topbar.setClickListener(this);
 
-//		MyDBHelper myDBHelper = new MyDBHelper(InspectionCreateActivity.this, "xywy.db",null, 1);
-//		db = myDBHelper.getWritableDatabase();
 
 		//获取控件信息
 		ins_name = (EditText)findViewById(R.id.editText1);
@@ -72,9 +69,9 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 			public void onCheckedChanged(RadioGroup arg0, int arg1) {
 				// TODO Auto-generated method stub
 				if (arg1 == sex_rb1.getId()) {
-					sex = "男";
+					sex = Utils.SEX.MAN.ordinal();
 				} else {
-					sex = "女";
+					sex = Utils.SEX.WOMAN.ordinal();
 				}
 			}
 		});
@@ -82,6 +79,9 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 		pat_age = (EditText)findViewById(R.id.age_text);
 		pat_dia = (EditText)findViewById(R.id.clinical_diagnosis_text);
 		ins_content = (EditText)findViewById(R.id.inspection_text);
+		doctor_name = (EditText)findViewById(R.id.doctor_text);
+		//自动填写doctor姓名
+		doctor_name.setText(Utils.LOGIN_DOCTOR.getRealName());
 
 		ins_date = (EditText)findViewById(R.id.date_text);
 		calendar = Calendar.getInstance();
@@ -95,7 +95,7 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 		ins_comment = (EditText)findViewById(R.id.comment_text);
 
 		btn_save = (Button)findViewById(R.id.button_save);
-		btn_update = (Button)findViewById(R.id.button_update);
+		btn_commit = (Button)findViewById(R.id.button_update);
 
 		//日期选择按钮
 		date_choose.setOnClickListener(new View.OnClickListener() {
@@ -117,12 +117,12 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 			}
 		});
 		//更新按钮
-		btn_update.setOnClickListener(new View.OnClickListener() {
+		btn_commit.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				updateInspectionByWebService();
+				commitInspectionByWebService();
 
 			}
 		});
@@ -149,23 +149,25 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 			inspection.setInspectionName(ins_name.getText().toString());
 			inspection.setInspectionText(ins_content.getText().toString());
 			inspection.setInspectionDate(ins_date.getText().toString());
-			inspection.setInspectionComment(ins_date.getText().toString());
+			inspection.setInspectionComment(ins_comment.getText().toString());
 
 			inspection.setPatientName(pat_name.getText().toString());
 			inspection.setPatientSex(sex);
 			inspection.setPatientAge(pat_age.getText().toString());
 			inspection.setPatientDiag(pat_dia.getText().toString());
+			inspection.setDoctor(Utils.LOGIN_DOCTOR);
 
-			inspection.setInspectionState("未提交");
+
+			inspection.setInspectionState(Utils.INSPECTION_STATUS.UNCOMMITED.ordinal());
 
 			InspectionWebService.addInspection(inspection);
 
-			Toast.makeText(InspectionCreateActivity.this, "保存成功", Toast.LENGTH_SHORT).show();
-//			finish();
+			Toast.makeText(InspectionCreateActivity.this, "检查单保存成功", Toast.LENGTH_SHORT).show();
+			finish();
 		}
 	}
 
-	public void updateInspectionByWebService(){
+	public void commitInspectionByWebService(){
 		if(ins_name.getText().toString().equals("")
 				||pat_name.getText().toString().equals("")
 				||ins_content.getText().toString().equals("")){
@@ -182,8 +184,9 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 			inspection.setPatientSex(sex);
 			inspection.setPatientAge(pat_age.getText().toString());
 			inspection.setPatientDiag(pat_dia.getText().toString());
+			inspection.setDoctor(Utils.LOGIN_DOCTOR);
 
-			inspection.setInspectionState("已提交");
+			inspection.setInspectionState(Utils.INSPECTION_STATUS.COMMITED.ordinal());
 
 			InspectionWebService.addInspection(inspection);
 
@@ -191,27 +194,5 @@ public class InspectionCreateActivity extends Activity implements onTitleBarClic
 			finish();
 		}
 	}
-/*	public void addInspectionByDB(){
-		if(ins_name.getText().toString().equals("")
-				||pat_name.getText().toString().equals("")
-				||ins_content.getText().toString().equals("")){
-			Toast.makeText(InspectionCreateActivity.this, "您输入的信息不完整！",
-					Toast.LENGTH_SHORT).show();
-		}else{
-			ContentValues values = new ContentValues();
-			values.put("inspection_name",ins_name.toString());
-			values.put("patient_name",pat_name.toString());
-			values.put("patient_sex",pat_sexy.toString());
-			values.put("patient_age",pat_age.toString());
-			values.put("patient_diag",pat_dia.toString());
-			values.put("inspection_text",ins_content.toString());
-			values.put("inspection_date",ins_date.toString());
-			values.put("inspection_comment",ins_comment.toString());
-			values.put("inspection_state","未提交");
-			db.insert("inspection",null,values);
-			Toast.makeText(InspectionCreateActivity.this, "保存成功 to DB", Toast.LENGTH_SHORT).show();
-			finish();
-		}
-	}*/
 
 }

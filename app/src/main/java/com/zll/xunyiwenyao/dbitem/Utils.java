@@ -24,6 +24,10 @@ public class Utils {
         COMMITED,SAVED,APPROVED,REFUSED
     };
 
+    public static enum INSPECTION_STATUS{
+        UNCOMMITED, COMMITED
+    };
+
     public static Doctor LOGIN_DOCTOR;
 
 }

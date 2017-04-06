@@ -10,21 +10,22 @@ public class Inspection {
     private int id;     //系统自增的唯一id
     private String name;//检查单名称，必填项
     private String pname;//患者名称，必填项
-    private String psex;
-    private String page;
-    private String diagnose;
+    private int psex;//患者性别
+    private String page;//患者年龄
+    private String diagnose;//临床诊断
     private String content;//检查单内容，必填项
-    private String date;
-    private String comment;
-    private String state;
+    private String date;//开具日期
+    private String comment;//备注信息
+    private int state;//状态，未提交，已提交
+    private Doctor doctor;//开具检查单的医师
     private boolean checked;
 
     public Inspection(){
 
     };
-    public Inspection(String ins_name, String pat_name, String pat_sex, String pat_age,
+    public Inspection(String ins_name, String pat_name, int pat_sex, String pat_age,
                       String pat_diag, String ins_text, String ins_date, String ins_comment,
-                      String ins_state){
+                      int ins_state, Doctor doctor){
         super();
         this.name = ins_name;
         this.pname = pat_name;
@@ -35,6 +36,7 @@ public class Inspection {
         this.date = ins_date;
         this.comment = ins_comment;
         this.state = ins_state;
+        this.doctor = doctor;
     }
     public void setChecked(boolean checked) {
         this.checked = checked;
@@ -53,10 +55,10 @@ public class Inspection {
         this.pname = pat_name;
     }
 
-    public String getPatientSex() {
+    public int getPatientSex() {
         return psex;
     }
-    public void setPatientSex(String sex) {
+    public void setPatientSex(int sex) {
         this.psex = sex;
     }
 
@@ -95,10 +97,17 @@ public class Inspection {
         this.comment = comment;
     }
 
-    public String getInspectionState() {
+    public int getInspectionState() {
         return state;
     }
-    public void setInspectionState(String state) {
+    public void setInspectionState(int state) {
         this.state = state;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 }

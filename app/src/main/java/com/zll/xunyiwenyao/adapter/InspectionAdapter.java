@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.zll.xunyiwenyao.R;
 import com.zll.xunyiwenyao.activity.InspectionQueryActivity;
 import com.zll.xunyiwenyao.dbitem.Inspection;
+import com.zll.xunyiwenyao.dbitem.Utils;
 import com.zll.xunyiwenyao.webservice.InspectionWebService;
 
 import java.util.ArrayList;
@@ -65,7 +66,12 @@ public class InspectionAdapter extends BaseAdapter{
 
         ins_list_name.setText(itemlist.get(position).getPatientName().toString());
         ins_list_date.setText(itemlist.get(position).getInspectionDate().toString());
-        ins_list_state.setText(itemlist.get(position).getInspectionState().toString());
+        int state = itemlist.get(position).getInspectionState();
+        if(state== Utils.INSPECTION_STATUS.UNCOMMITED.ordinal())
+            ins_list_state.setText("未提交");
+        else
+            ins_list_state.setText("已提交");
+//        ins_list_state.setText(itemlist.get(position).getInspectionState().toString());
 
 //        ins_list_name.setText("李四");
 //        ins_list_date.setText("B超");

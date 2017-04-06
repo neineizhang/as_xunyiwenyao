@@ -36,10 +36,13 @@
 
 
         <activity android:name=".activity.InspectionCreateActivity"></activity>
-        <activity android:name=".activity.InspectionTemplateActivity"></activity>
         <activity android:name=".activity.InspectionQueryActivity"></activity>
         <activity android:name=".activity.ReviewActivity"></activity>
         <activity android:name=".activity.ReportCreateActivity"></activity>
+        <activity android:name=".activity.RegisterActivity"></activity>
+        <activity android:name=".activity.InspectionCheckActivity"></activity>
+        <activity android:name=".activity.DoctorInformationManageActivity"></activity>
+        <activity android:name=".activity.AccessorMainActivity"></activity>
     </application>
 
 </manifest>
