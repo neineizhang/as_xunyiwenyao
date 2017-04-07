@@ -35,7 +35,6 @@ public class InspectionAdapter extends BaseAdapter{
     public int getCount() {
         // TODO Auto-generated method stub
         return itemlist.size();
-//        return 1;
     }
 
     @Override
@@ -55,14 +54,16 @@ public class InspectionAdapter extends BaseAdapter{
         View view = LayoutInflater.from(mContext).inflate(R.layout.inspection_listview, null);
 
 
-        CheckBox ins_checkbox = (CheckBox) view
-                .findViewById(R.id.ins_checkbox);
+//        CheckBox ins_checkbox = (CheckBox) view
+//                .findViewById(R.id.ins_checkbox);
         TextView ins_list_name = (TextView) view
                 .findViewById(R.id.ins_list_name);
         TextView ins_list_date = (TextView) view
                 .findViewById(R.id.ins_list_date);
         TextView ins_list_state = (TextView) view
                 .findViewById(R.id.ins_list_state);
+        TextView ins_list_doctor = (TextView) view
+                .findViewById(R.id.ins_list_doctor);
 
         ins_list_name.setText(itemlist.get(position).getPatientName().toString());
         ins_list_date.setText(itemlist.get(position).getInspectionDate().toString());
@@ -71,11 +72,7 @@ public class InspectionAdapter extends BaseAdapter{
             ins_list_state.setText("未提交");
         else
             ins_list_state.setText("已提交");
-//        ins_list_state.setText(itemlist.get(position).getInspectionState().toString());
-
-//        ins_list_name.setText("李四");
-//        ins_list_date.setText("B超");
-//        ins_list_state.setText("1");
+        ins_list_doctor.setText(itemlist.get(position).getDoctor().getRealName().toString());
         return view;
     }
 }

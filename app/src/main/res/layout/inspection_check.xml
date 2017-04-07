@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/background_login">
+
+        <com.zll.xunyiwenyao.util.TopBarView
+            android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:titleText="检查单信息查看"
+            custom:titleSize="6sp"
+            custom:titleColor="@android:color/white"
+            custom:leftBtn="@drawable/back_page"
+            custom:rightBtn="@drawable/edit_normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*检查单名称：" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#BFBFBF"
+            android:layout_gravity="center_horizontal" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:enabled="false">
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+    <View  android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:background="#BFBFBF"
+
+        />
+
+    <!--病人基本信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="#B0B0B0"
+            android:text="病人信息"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#BFBFBF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/name_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="*姓名" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#BFBFBF" />
+
+            <EditText
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+
+            android:background="#BFBFBF" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/sexy_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.92"
+                android:text="性别" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#BFBFBF" />
+            <RadioGroup
+                android:id="@+id/sex_rg"
+                android:layout_width="287dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_weight="0.36"
+                >
+
+                <RadioButton
+                    android:id="@+id/sex_rb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="男"
+                    android:enabled="false"/>
+
+                <RadioButton
+                    android:id="@+id/sex_rb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="女"
+                    android:enabled="false"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#BFBFBF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/age_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="年龄" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#BFBFBF" />
+
+            <EditText
+                android:id="@+id/age_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#BFBFBF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/clinical_diagnosis_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="临床诊断" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#BFBFBF" />
+
+            <EditText
+                android:id="@+id/clinical_diagnosis_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#BFBFBF" />
+    </LinearLayout>
+
+    <!-- 检验信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="*检查信息"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:background="#B0B0B0"
+            android:textSize="18sp"
+            android:layout_weight="2" />
+
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#BFBFBF"/>
+
+        <EditText
+            android:id="@+id/inspection_text"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:enabled="false">
+        </EditText>
+    </LinearLayout>
+    <!-- 其他信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="其他信息"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:background="#B0B0B0"
+            android:textSize="18sp"
+            android:layout_weight="2" />
+
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#BFBFBF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/date_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="开具日期"
+                android:layout_weight="1"/>
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#BFBFBF"
+                android:layout_gravity="center_horizontal"/>
+
+            <EditText
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.2"
+                android:inputType="date"
+                android:enabled="false"/>
+            <Button
+                android:id="@+id/date_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择" />
+
+        </LinearLayout>
+
+
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#BFBFBF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/doctor_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="医师"
+                android:layout_weight="1"
+                />
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#BFBFBF"
+                android:layout_gravity="center_horizontal"/>
+
+            <EditText
+                android:id="@+id/doctor_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:enabled="false"/>
+
+        </LinearLayout>
+        <View  android:layout_height="1px"
+            android:layout_width="match_parent"
+            android:background="#BFBFBF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/comment_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="备注"
+                android:layout_weight="1"/>
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#BFBFBF"
+                android:layout_gravity="center_horizontal"/>
+
+            <EditText
+                android:id="@+id/comment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:enabled="false"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+
+
+        <Button
+            android:id="@+id/button_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="修改" />
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确定" />
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除" />
+        <Button
+            android:id="@+id/button_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="提交" />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

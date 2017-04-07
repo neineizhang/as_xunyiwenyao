@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/background_login">
+
+        <com.zll.xunyiwenyao.util.TopBarView
+            android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:titleText="药品评价查询"
+            custom:titleSize="6sp"
+            custom:titleColor="@android:color/white"
+            custom:leftBtn="@drawable/back_page"
+            custom:rightBtn="@drawable/edit_normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="406dp"
+        android:orientation="vertical"
+        android:layout_weight="0.83">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_login"
+            android:orientation="horizontal" >
+
+            <!--<CheckBox-->
+            <!--android:id="@+id/checkboxsum"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="名称"
+                android:gravity="center"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="日期"
+                android:gravity="center"
+                android:textColor="#ffffff" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="医师"
+                android:gravity="center"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="374dp">
+
+            <ListView
+                android:id="@+id/ins_listview"
+                android:layout_width="match_parent"
+                android:layout_height="444dp" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -17,7 +17,7 @@ public class Inspection {
     private String date;//开具日期
     private String comment;//备注信息
     private int state;//状态，未提交，已提交
-    private Doctor doctor;//开具检查单的医师
+    private Doctor doctor;//开具检查单的医师，必填项
     private boolean checked;
 
     public Inspection(){
@@ -109,5 +109,9 @@ public class Inspection {
     }
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
+    }
+
+    public boolean isChecked() {
+        return checked;
     }
 }

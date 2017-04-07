@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listTitleArr">
+        <item>住院医师</item>
+        <item>主治医师</item>
+        <item>副主任医师</item>
+        <item>主任医师</item>
+        <item>其他职位</item>
+    </string-array>
+</resources>

@@ -93,7 +93,7 @@ public class MainActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i9=new Intent(MainActivity.this,ReviewActivity.class);
+				Intent i9=new Intent(MainActivity.this,ReviewCreateActivity.class);
 				startActivity(i9);
 				
 			}

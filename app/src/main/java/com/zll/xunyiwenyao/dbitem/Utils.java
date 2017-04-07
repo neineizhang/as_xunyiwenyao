@@ -30,4 +30,8 @@ public class Utils {
 
     public static Doctor LOGIN_DOCTOR;
 
+    public static enum REPORT_LEVEL{
+        NEW, SEVERE, GENERAL
+    };
+
 }

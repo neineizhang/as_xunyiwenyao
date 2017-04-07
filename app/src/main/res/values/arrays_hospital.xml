@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listHospitalArr">
+        <item>中南大学湘雅医院</item>
+        <item>湖南省人民医院</item>
+        <item>解放军163医院</item>
+        <item>湖南省中医院</item>
+        <item>中南大学附属湘雅二医院</item>
+        <item>长沙市第一医院</item>
+        <item>湖南省肿瘤医院</item>
+        <item>湖南省儿童医院</item>
+        <item>其他医院</item>
+    </string-array>
+</resources>

@@ -31,7 +31,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="报告名称：" />
+            android:text="*报告名称：" />
         
         <View  
     	android:layout_width="1px" 
@@ -40,7 +40,7 @@
     	android:layout_gravity="center_horizontal" />
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -68,7 +68,7 @@
 	            android:id="@+id/textView2"
 	            android:layout_width="fill_parent"
 	            android:layout_height="0dp"
-	            android:text="临床表现"
+	            android:text="*临床表现"
 	            android:textColor="#000000"
 	        	android:textStyle="bold"
 	        	android:background="#B0B0B0"
@@ -82,7 +82,7 @@
 	        <EditText
 		        android:id="@+id/manifestation_text"
 		        android:layout_width="match_parent"
-		        android:layout_height="91dp"
+		        android:layout_height="73dp"
 		        android:ems="10"
 		        android:inputType="textMultiLine" >
 			  </EditText>
@@ -94,25 +94,30 @@
 	        android:layout_height="wrap_content"
 	        android:orientation="vertical" >
 
-	        <TextView
+
+
+				<TextView
 	            android:id="@+id/textView3"
 	            android:layout_width="fill_parent"
 	            android:layout_height="0dp"
-	            android:text="涉及的主要药品"
+	            android:text="*涉及的主要药品"
 	            android:textColor="#000000"
 	        	android:textStyle="bold"
 	        	android:background="#B0B0B0"
 	        	android:textSize="18sp"
-	            android:layout_weight="2" />
+	            android:layout_weight="1" />
+
+
         
 	        <View  android:layout_height="1px" 
 	           android:layout_width="match_parent"
-	           android:background="#BFBFBF"/>    
+	           android:background="#BFBFBF"/>
+
 	           
 	        <EditText
 		        android:id="@+id/drug_text"
 		        android:layout_width="match_parent"
-		        android:layout_height="120sp"
+		        android:layout_height="97dp"
 		        android:ems="10"
 		        android:inputType="textMultiLine" >
 			  </EditText>
@@ -134,10 +139,44 @@
 	        	android:background="#B0B0B0"
 	        	android:textSize="18sp"
 	            android:layout_weight="2" />
-        
-	        <View  android:layout_height="1px" 
+
+				 <View  android:layout_height="1px"
+					 android:layout_width="match_parent"
+					 android:background="#BFBFBF"/>
+
+				 <LinearLayout
+					 android:layout_width="match_parent"
+					 android:layout_height="wrap_content"
+					 android:layout_weight="1" >
+
+					 <TextView
+						 android:id="@+id/event_date_view"
+						 android:layout_width="0dp"
+						 android:layout_height="wrap_content"
+						 android:text="发生日期"
+						 android:layout_weight="1"/>
+					 <View
+						 android:layout_width="1px"
+						 android:layout_height="match_parent"
+						 android:background="#BFBFBF"
+						 android:layout_gravity="center_horizontal"/>
+
+					 <EditText
+						 android:id="@+id/event_date_text"
+						 android:layout_width="wrap_content"
+						 android:layout_height="wrap_content"
+						 android:layout_weight="2.2" />
+					 <Button
+						 android:id="@+id/event_date_choose"
+						 android:layout_width="wrap_content"
+						 android:layout_height="wrap_content"
+						 android:text="选择" />
+
+				 </LinearLayout>
+
+				 <View  android:layout_height="1px"
 	           android:layout_width="match_parent"
-	           android:background="#BFBFBF"/>    
+	           android:background="#BFBFBF"/>
 
 				 <LinearLayout
 	            android:layout_width="match_parent"
@@ -157,13 +196,13 @@
 			    	android:layout_gravity="center_horizontal"/>
 	
 	            <EditText
-	                android:id="@+id/date_text"
+	                android:id="@+id/report_date_text"
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="2.22"
 	                android:inputType="date"/>
 				<Button
-					android:id="@+id/date_choose"
+					android:id="@+id/reprot_date_choose"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="选择" />
@@ -195,7 +234,8 @@
 						 android:id="@+id/doctor_text"
 						 android:layout_width="wrap_content"
 						 android:layout_height="wrap_content"
-						 android:layout_weight="3" />
+						 android:layout_weight="3"
+						 android:enabled="false"/>
 
 				 </LinearLayout>
 
@@ -237,16 +277,9 @@
 	        
 
 
-         <Button
-            android:id="@+id/button_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-
-            android:text="保存" />
 
         <Button
-            android:id="@+id/button_update"
+            android:id="@+id/button_commit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

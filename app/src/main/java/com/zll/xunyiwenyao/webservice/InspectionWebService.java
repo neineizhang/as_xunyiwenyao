@@ -34,7 +34,28 @@ public class InspectionWebService {
     public static void updateInspectionByPosition(int position,Inspection item){
         inspectionList.set(position,item);
     }
+    public static void deleteInspectionByPosition(int position){
+        inspectionList.remove(position);
+    }
 
+    public static List<String> getAllPatientName(){
+        List<String> pnamelist = new ArrayList<String>();
+        for(Inspection item:inspectionList){
+            if (!pnamelist.contains(item.getPatientName().toString()))
+                pnamelist.add(item.getPatientName().toString());
+        }
+        return pnamelist;
+    }
+
+    public static List<Inspection> getInspectionByPatientName(String name){
+        List<Inspection> resultList = new ArrayList<Inspection>();
+        for(Inspection item:inspectionList){
+            if(name.equals(item.getPatientName().toString())){
+                resultList.add(item);
+            }
+        }
+        return resultList;
+    }
 
 
 }

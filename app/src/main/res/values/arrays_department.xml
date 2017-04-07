@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listDepartmentArr">
+        <item>内科</item>
+        <item>外科</item>
+        <item>妇科</item>
+        <item>五官科</item>
+        <item>医技科室</item>
+        <item>其他科室</item>
+    </string-array>
+</resources>
